@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <g id="Group_16" data-name="Group 16" transform="translate(1 1)">
+    <circle id="Oval_2" data-name="Oval 2" cx="16" cy="16" r="16" fill="none" stroke="#c6b27e" stroke-miterlimit="10" stroke-width="2"/>
+    <g id="Group_6" data-name="Group 6" transform="translate(10 10)">
+      <g id="Group_2_Copy_6" data-name="Group 2 Copy 6" transform="translate(0 10.5)">
+        <g id="Rectangle" transform="translate(-0.126 -0.025)" fill="rgba(0,0,0,0)" stroke-miterlimit="10">
+          <path d="M.126.025h12v1.5h-12Z" stroke="none"/>
+          <path d="M 0.126312255859375 0.02500319480895996 L 12.12631225585938 0.02500319480895996 L 12.12631225585938 1.52500319480896 L 0.126312255859375 1.52500319480896 L 0.126312255859375 0.02500319480895996 Z" stroke="none" fill="#c6b27e"/>
+        </g>
+      </g>
+      <g id="Group_2_Copy_7" data-name="Group 2 Copy 7" transform="translate(0 5.25)">
+        <g id="Rectangle-2" data-name="Rectangle" transform="translate(-0.126 -0.025)" fill="rgba(0,0,0,0)" stroke-miterlimit="10">
+          <path d="M.126.025h12v1.5h-12Z" stroke="none"/>
+          <path d="M 0.126312255859375 0.02500319480895996 L 12.12631225585938 0.02500319480895996 L 12.12631225585938 1.52500319480896 L 0.126312255859375 1.52500319480896 L 0.126312255859375 0.02500319480895996 Z" stroke="none" fill="#c6b27e"/>
+        </g>
+      </g>
+      <g id="Group_2_Copy_8" data-name="Group 2 Copy 8">
+        <g id="Rectangle-3" data-name="Rectangle" transform="translate(-0.126 -0.025)" fill="rgba(0,0,0,0)" stroke-miterlimit="10">
+          <path d="M.126.025h12v1.5h-12Z" stroke="none"/>
+          <path d="M 0.126312255859375 0.02500319480895996 L 12.12631225585938 0.02500319480895996 L 12.12631225585938 1.52500319480896 L 0.126312255859375 1.52500319480896 L 0.126312255859375 0.02500319480895996 Z" stroke="none" fill="#c6b27e"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
