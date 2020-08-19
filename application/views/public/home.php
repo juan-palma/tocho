@@ -1,25 +1,78 @@
 <!-- sección HOME INICIO -->
+<div class="mainbox bl1" style="background-image: url(<?php echo(base_url( 'assets/public/img/home_fondo_sec1.jpg' )); ?> )">
+	<div id="mancha">
+		<img src="<?php echo(base_url( 'assets/public/img/mancha.png' )); ?>" />
+	</div>
+	<div id="playeras">
+		<img src="<?php echo(base_url( 'assets/public/img/home_sec1_texto_ropa.png' )); ?>" />
+	</div>
+	<div id="balon2" class="rellax" data-rellax-speed="-2">
+		<img src="<?php echo(base_url( 'assets/public/img/balon2.png' )); ?>" />
+	</div>
+	<div id="balon1" class="rellax" data-rellax-speed="-7">
+		<img src="<?php echo(base_url( 'assets/public/img/balon1.png' )); ?>" />
+	</div>
+</div>
+
+<div class="mainbox bl2">
+	<div id="generos">
+		<img src="<?php echo(base_url( 'assets/public/img/home_sec2_generos.png' )); ?>" />
+	</div>
+	<div class="cols_box">
+		<div class="cols3 rellax" data-rellax-speed="1">
+			<a href=""><div class="btnVerMas">Ver más</div></a>
+		</div>
+		<div class="cols3 rellax" data-rellax-speed="-1">
+			<a href=""><div class="btnVerMas">Ver más</div></a>
+		</div>
+		<div class="cols3 rellax" data-rellax-speed="1">
+			<a href=""><div class="btnVerMas">Ver más</div></a>
+		</div>
+	</div>
+</div>
+
+<div class="mainbox bl3">
+	<div id="fondo_form">
+		<img src="<?php echo(base_url( 'assets/public/img/home_sec3_fondo.png' )); ?>" />
+	</div>
+	<div class="titulo_box">
+		<h4 class="titulo">BUSCA TU EQUIPO</h4>
+		<div class="buscar_box">
+			<input type="text" value=""></input>
+			<div id="btnBuscarUniforme">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--
 <div class="mainbox bl1" style="background-image: url(<?php echo(base_url( 'assets/public/img/home_bl1_fondo.jpg' )); ?> )">
 	<div class="homeTitulo"><?php echo(@$inicioDB->inicio_titulo); ?></div>
 	<div class="homeSubtext"><?php echo(@$inicioDB->inicio_subtexto); ?></div>
 </div>
+-->
 
 
 
 
 
 <!-- sección HOME QUINES SOMOS -->
+<!--
 <div class="mainbox bl2" style="background-image: url(<?php /* echo(base_url( 'assets/public/img/home_bl1_fondo.jpg' )); */ ?> )">
 	<div class="somosTitulo"><?php echo(@$somosDB->titulo); ?></div>
 	<div class="somosTexto"><?php echo(@$somosDB->texto); ?></div>
 	<a href="<?php echo( base_url('quienes_somos') ); ?>" target="_self"><div class="somosTextoBtn btnVerMas"><?php echo(@$somosDB->textoBtn); ?></div></a>
 </div>
+-->
 
 
 
 
 
 <!-- sección HOME SERVICIOS -->
+<!--
 <section id="servicios" class="mainbox bl3">
 	<div class="box2">
 		<?php
@@ -38,12 +91,6 @@
 						<img src="<?php echo( base_url('assets/public/img/servicios/'.$v->icono) ); ?>" alt="servicio_icono_<?php echo($v->icono); ?>" />
 					</div>
 					<h4 class="servicioTitulo"><?php echo($v->titulo); ?></h4>
-<!--
-					<div class="texto"><span><?php echo($v->texto); ?></span></div>
-					<div class="enlace">
-						<input type="button" onclick="window.location.href = '<?php echo(base_url('servicios/articulo/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
-					</div>
--->
 				</article>
 				<?php
 			}
@@ -52,6 +99,7 @@
 		<a href="<?php echo( base_url('servicios') ); ?>" target="_self"><div class="servicioTextoBtn btnVerMas"><?php echo(@$serviciosDB->textoBtn); ?></div></a>
 	</div>
 </section>
+-->
 
 
 
@@ -59,6 +107,7 @@
 
 
 <!-- sección HOME PORTAFOLIO -->
+<!--
 <section id="portafolios" class="mainbox bl4">
 	<div class="slideMain">
 		<main class="slideItems">
@@ -91,6 +140,7 @@
 		</main>
 	</div>
 </section>
+-->
 
 
 
@@ -99,6 +149,7 @@
 
 
 <!-- sección HOME CLIENTES -->
+<!--
 <section id="clientes" class="mainbox bl5">
 	<div class="slideMain">
 		<?php
@@ -122,6 +173,7 @@
 		</main>
 	</div>
 </section>
+-->
 
 
 

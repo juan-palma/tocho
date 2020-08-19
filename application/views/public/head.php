@@ -128,7 +128,41 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 				    </svg>
 					';
 	$headerDB->redes[] = $valor;
-}	
+}
+
+
+
+// Iconos funciones especificas
+
+	$valor = new stdClass();
+	$valor->red = 'buscar';
+	$valor->nombre = 'Buscar';
+	$valor->liga = "javascript:void(0);";
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice" class="">
+						<use xlink:href="#svg_buscar"/>
+				    </svg>
+					';
+	$headerDB->iconos_funcionales[] = $valor;
+
+	$valor = new stdClass();
+	$valor->red = 'login';
+	$valor->nombre = 'Login';
+	$valor->liga = "javascript:void(0);";
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice" class="">
+						<use xlink:href="#svg_login"/>
+				    </svg>
+					';
+	$headerDB->iconos_funcionales[] = $valor;
+
+	$valor = new stdClass();
+	$valor->red = 'carrito';
+	$valor->nombre = 'Carrito';
+	$valor->liga = "javascript:void(0);";
+	$valor->icono = '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="244.5 0 519 612" style="enable-background:new 244.5 0 519 612;" xml:space="preserve">
+						<use xlink:href="#svg_carrito"/>
+				    </svg>
+					';
+	$headerDB->iconos_funcionales[] = $valor;
 	
 
 ?>
@@ -240,11 +274,52 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 				</symbol>
 			</svg>
 			
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" xml:space="preserve" class="colDin1">
+				<symbol id="svg_buscar" >
+					<g>
+						<path d="M20,40C9,40,0,31,0,20S9,0,20,0s20,9,20,20S31,40,20,40z M20,1C9.5,1,1,9.5,1,20s8.5,19,19,19s19-8.5,19-19S30.4,1,20,1z"/>
+					</g>
+					<g>
+						<path d="M789.7,557.3L648.9,416.4c34.9-42.6,55.9-97.1,55.9-156.5c0-136.3-110.6-246.8-246.8-246.8
+								c-136.4,0-246.8,110.6-246.8,246.8S321.6,506.8,458,506.8c59.4,0,113.8-20.9,156.3-55.8l140.8,140.7c9.6,9.6,25,9.6,34.5,0
+								C799.2,582.2,799.2,566.7,789.7,557.3z M458,457.7c-109.1,0-197.8-88.7-197.8-197.7S348.8,62.2,458,62.2
+								c109,0,197.8,88.8,197.8,197.8S567,457.7,458,457.7z"/>
+					</g>
+				</symbol>
+			</svg>
+			
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" xml:space="preserve" class="colDin1">
+				<symbol id="svg_login" >
+					<g>
+						<path d="M20,40C9,40,0,31,0,20S9,0,20,0s20,9,20,20S31,40,20,40z M20,1C9.5,1,1,9.5,1,20s8.5,19,19,19s19-8.5,19-19S30.4,1,20,1z"/>
+					</g>
+					<g>
+						<path d="M720.4,395.6c-33.3-33.3-73-58-116.3-72.9c46.4-31.9,76.8-85.4,76.8-145.8C680.9,79.4,601.5,0,504,0
+								S327.1,79.4,327.1,176.9c0,60.4,30.5,113.9,76.8,145.8c-43.3,14.9-83,39.6-116.3,72.9C229.8,453.4,198,530.3,198,612h47.8
+								c0-142.4,115.8-258.2,258.2-258.2S762.2,469.6,762.2,612H810C810,530.3,778.2,453.4,720.4,395.6z M504,306
+								c-71.2,0-129.1-57.9-129.1-129.1S432.8,47.8,504,47.8s129.1,57.9,129.1,129.1S575.2,306,504,306z"/>
+					</g>
+				</symbol>
+			</svg>
+			
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="244.5 0 519 612" style="enable-background:new 244.5 0 519 612;" xml:space="preserve">
+				<symbol id="svg_carrito">
+					<g>
+						<path d="M748.8,529l-35-394.6c-0.8-8.8-8.1-15.4-16.8-15.4h-72.1C623.9,53.2,570.1,0,504,0S384.1,53.2,383.1,119H311
+							c-8.8,0-16,6.6-16.8,15.4l-35,394.6c0,0.5-0.1,1-0.1,1.5c0,44.9,41.2,81.5,91.9,81.5h306.1c50.7,0,91.9-36.5,91.9-81.5
+							C748.9,530,748.9,529.5,748.8,529z M504,33.8c47.4,0,86.1,38,87.1,85.2H416.9C417.9,71.8,456.6,33.8,504,33.8z M657.1,578.2H350.9
+							c-31.8,0-57.6-21-58.1-46.9l33.5-378.3H383v51.3c0,9.4,7.5,16.9,16.9,16.9s16.9-7.5,16.9-16.9v-51.3h174.3v51.3
+							c0,9.4,7.5,16.9,16.9,16.9c9.4,0,16.9-7.5,16.9-16.9v-51.3h56.6l33.7,378.3C714.6,557.2,688.7,578.2,657.1,578.2z"/>
+					</g>
+				</symbol>
+			</svg>
+			
 		</div>
 <!-- 	FIN SVG -->
 		
 		<nav id="nav" class="onlyDesktop">
-			<div id="logo"><a href="<?php echo(base_url()); ?>"><img src="<?php echo(base_url('assets/public/img/logo_ci_fondo.svg')); ?>"></img></a></div>
+			<div id="logo"><a href="<?php echo(base_url()); ?>"><img src="<?php echo(base_url('assets/public/img/tocho-logo.svg')); ?>"></img></a></div>
+<!--
 			<div id="menus">
 				<a id="btnMenuHome" href="<?php echo(base_url()); ?>"><div class="menu">Home</div></a>
 				<a href="<?php echo(base_url('servicios')); ?>"><div class="menu">servicios</div></a>
@@ -253,9 +328,12 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 				<a href="<?php echo(base_url('quienes_somos')); ?>"><div class="menu">quiénes somos</div></a>
 				<a href="<?php echo(base_url('postulate')); ?>"><div class="menu">postúlate</div></a>
 			</div>
+-->
 			<div id="dir">
+<!--
 				<div class="tel"><a href="tel:<?php echo($generalDB->telefono); ?>">Tel:<?php echo($generalDB->telefono); ?></a></div>
 				<div class="mail"><a href="mailto:<?php echo($generalDB->correo); ?>"><?php echo($generalDB->correo); ?></a></div>
+
 				<div class="redes">
 					<?php
 						foreach ($headerDB->redes as $i=>$v) {
@@ -271,9 +349,76 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 						}
 					?>
 				</div>
+-->				
+				<div class="redes">
+					<div class="red carrito">
+						<a target="_self" href="javascript:void(0);">
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="244.5 0 519 612" style="enable-background:new 244.5 0 519 612;" xml:space="preserve">
+							<g>
+								<path d="M748.8,529l-35-394.6c-0.8-8.8-8.1-15.4-16.8-15.4h-72.1C623.9,53.2,570.1,0,504,0S384.1,53.2,383.1,119H311
+									c-8.8,0-16,6.6-16.8,15.4l-35,394.6c0,0.5-0.1,1-0.1,1.5c0,44.9,41.2,81.5,91.9,81.5h306.1c50.7,0,91.9-36.5,91.9-81.5
+									C748.9,530,748.9,529.5,748.8,529z M504,33.8c47.4,0,86.1,38,87.1,85.2H416.9C417.9,71.8,456.6,33.8,504,33.8z M657.1,578.2H350.9
+									c-31.8,0-57.6-21-58.1-46.9l33.5-378.3H383v51.3c0,9.4,7.5,16.9,16.9,16.9s16.9-7.5,16.9-16.9v-51.3h174.3v51.3
+									c0,9.4,7.5,16.9,16.9,16.9c9.4,0,16.9-7.5,16.9-16.9v-51.3h56.6l33.7,378.3C714.6,557.2,688.7,578.2,657.1,578.2z"/>
+							</g>
+							</svg>
+						</a>
+					</div>
+					
+					<div class="red buscar">
+						<a target="_self" href="javascript:void(0);">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="181.5 0 633 612" style="enable-background:new 181.5 0 633 612;" xml:space="preserve">
+							<g>
+								<path d="M789.7,557.3L648.9,416.4c34.9-42.6,55.9-97.1,55.9-156.5c0-136.3-110.6-246.8-246.8-246.8
+									c-136.4,0-246.8,110.6-246.8,246.8S321.6,506.8,458,506.8c59.4,0,113.8-20.9,156.3-55.8l140.8,140.7c9.6,9.6,25,9.6,34.5,0
+									C799.2,582.2,799.2,566.7,789.7,557.3z M458,457.7c-109.1,0-197.8-88.7-197.8-197.7S348.8,62.2,458,62.2
+									c109,0,197.8,88.8,197.8,197.8S567,457.7,458,457.7z"/>
+							</g>
+							</svg>
+						</a>
+					</div>
+					
+					<div class="red login">
+						<a target="_self" href="javascript:void(0);">
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="176.5 0 655 612" style="enable-background:new 176.5 0 655 612;" xml:space="preserve">
+							<g>
+								<g>
+									<path d="M720.4,395.6c-33.3-33.3-73-58-116.3-72.9c46.4-31.9,76.8-85.4,76.8-145.8C680.9,79.4,601.5,0,504,0
+										S327.1,79.4,327.1,176.9c0,60.4,30.5,113.9,76.8,145.8c-43.3,14.9-83,39.6-116.3,72.9C229.8,453.4,198,530.3,198,612h47.8
+										c0-142.4,115.8-258.2,258.2-258.2S762.2,469.6,762.2,612H810C810,530.3,778.2,453.4,720.4,395.6z M504,306
+										c-71.2,0-129.1-57.9-129.1-129.1S432.8,47.8,504,47.8s129.1,57.9,129.1,129.1S575.2,306,504,306z"/>
+								</g>
+							</g>
+							</svg>
+						</a>
+					</div>
+					
+					<div class="red menu_btn">
+						<a target="_self" href="javascript:void(0);">
+							<svg version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 302.9 222.7" style="enable-background:new 0 0 302.9 222.7;" xml:space="preserve">
+							<g>
+								<rect x="0" width="302.9" height="31.5"/>
+								<rect x="0" y="96.9" width="302.9" height="31.5"/>
+								<rect x="91.6" y="191.2" width="208.1" height="31.5"/>
+							</g>
+							</svg>
+						</a>
+					</div>
+					
+				</div>
+				
+				
+
+				
+				
 			</div>
 		</nav>
 		
+<!--
 		<nav id="navMobile" class="onlyMobile">
 			<div id="logo"><a href="<?php echo(base_url()); ?>"><img src="<?php echo(base_url('assets/public/img/logo_ci_fondo.svg')); ?>"></img></a></div>
 			<div id="navMobileOpen">
@@ -286,9 +431,7 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 				<a id="btnMenuHome" href="<?php echo(base_url()); ?>"><div class="menu">Home</div></a>
 				<a href="<?php echo(base_url('servicios')); ?>"><div class="menu">servicios</div></a>
 				<a href="<?php echo(base_url('portafolio')); ?>"><div class="menu">portafolio</div></a>
-<!-- 				<a id="btnMenuCliente" href="javascript:void(0);"><div class="menu">clientes</div></a> -->
 				<a href="<?php echo(base_url('quienes_somos')); ?>"><div class="menu">quienes somos</div></a>
-<!-- 				<a href="<?php echo(base_url('postulate')); ?>"><div class="menu">postulate</div></a> -->
 				<div class="menu postulateAcordeon">postulate</div>
 				<div class="postulateInfo">
 					<a href="<?php echo(base_url('postulate')); ?>"><div class="menu">modelo</div></a>
@@ -321,6 +464,7 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 				<img src="<?php echo(base_url('assets/public/img/navMobileCloseBtn.svg')); ?>" />
 			</div>
 		</nav>
+-->
 		
 		
 		

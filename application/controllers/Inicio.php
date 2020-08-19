@@ -40,6 +40,7 @@ class Inicio extends CI_Controller {
 		
 		
 		
+/*
 		//Consulta - HOME-QUINES SOMOS
 		$this->basic_modal->clean();
 		$this->basic_modal->tabla = 'contenido';
@@ -51,9 +52,11 @@ class Inicio extends CI_Controller {
 		$nuevoValor = (isset($consulta) && property_exists($consulta, 'contenido_info')) ? str_replace($encontrar, $remplazar, $consulta->contenido_info) : '';
 		$valoresDB = ( is_object(json_decode($nuevoValor)) ) ? json_decode($nuevoValor) : new stdClass();
 		$data['somosDB'] = $valoresDB;
+*/
 		
 		
 		
+/*
 		//Consulta - HOME-SERVICIOS
 		$this->basic_modal->clean();
 		$this->basic_modal->tabla = 'contenido';
@@ -65,10 +68,12 @@ class Inicio extends CI_Controller {
 		$nuevoValor = (isset($consulta) && property_exists($consulta, 'contenido_info')) ? str_replace($encontrar, $remplazar, $consulta->contenido_info) : '';
 		$valoresDB = ( is_object(json_decode($nuevoValor)) ) ? json_decode($nuevoValor) : new stdClass();
 		$data['serviciosDB'] = $valoresDB;
+*/
 		
 		
 		
 		
+/*
 		//Consulta - HOME-PORTAFOLIOS
 		$this->basic_modal->clean();
 		$this->basic_modal->tabla = 'contenido';
@@ -80,10 +85,12 @@ class Inicio extends CI_Controller {
 		$nuevoValor = (isset($consulta) && property_exists($consulta, 'contenido_info')) ? str_replace($encontrar, $remplazar, $consulta->contenido_info) : '';
 		$valoresDB = ( is_object(json_decode($nuevoValor)) ) ? json_decode($nuevoValor) : new stdClass();
 		$data['portafolioDB'] = $valoresDB;
+*/
 		
 		
 		
 		
+/*
 		//Consulta - HOME-CLIENTES
 		$this->basic_modal->clean();
 		$this->basic_modal->tabla = 'contenido';
@@ -95,11 +102,13 @@ class Inicio extends CI_Controller {
 		$clean = (isset($consulta) && property_exists($consulta, 'contenido_info')) ? str_replace($encontrar, $remplazar, $consulta->contenido_info) : '';
 		$cleanClientesDB = ( is_object(json_decode($clean)) ) ? json_decode($clean) : new stdClass();
 		$data['clientesDB'] = $cleanClientesDB;
+*/
 		
 		
 		
 		
 		
+/*
 		//Consulta - FOOTER-ALIANZAS
 		$this->basic_modal->clean();
 		$this->basic_modal->tabla = 'contenido';
@@ -111,6 +120,7 @@ class Inicio extends CI_Controller {
 		$clean = (isset($consulta) && property_exists($consulta, 'contenido_info')) ? str_replace($encontrar, $remplazar, $consulta->contenido_info) : '';
 		$cleanAlianzasDB = ( is_object(json_decode($clean)) ) ? json_decode($clean) : new stdClass();
 		$data['alianzasDB'] = $cleanAlianzasDB;
+*/
 
 
 		
@@ -176,7 +186,7 @@ class Inicio extends CI_Controller {
 		
 		$data['titulo'] = "Home";
 		$data['actual'] = "home";
-		$data['desc'] = "Descripción HOME Circulo Imagen";
+		$data['desc'] = "Uniformes Deportivos";
 		
 		$this->load->view('public/head', $data);
 		$this->load->view('public/home', $data);

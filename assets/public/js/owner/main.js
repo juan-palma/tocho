@@ -1570,6 +1570,225 @@ function footer_run(){
 
 
 
+function home_shopify(){
+/*
+	import Client from 'shopify-buy';
+
+	// Initializing a client to return content in the store's primary language
+	const client = Client.buildClient({
+		domain: 'idasoporte.myshopify.com',
+		storefrontAccessToken: 'eda8f84d885e76a0763bb1a6c91da226'
+	});
+*/
+	
+	
+	//const fetch = require('node-fetch');
+
+	// Shop specific setup constants 
+/*
+	const args = process.argv.slice(2);
+	const shopUrl = args[0] || "idasoporte.myshopify.com";
+	const accessToken = args[1] || "eda8f84d885e76a0763bb1a6c91da226";
+*/
+	
+	
+	const shopUrl = "https://idasoporte.myshopify.com/api/graphql";
+	const accessToken = "abcce6c73f1d06551bd87175f38d467e";
+	
+	// Simple GraphQL with no variables
+	const query = `{
+  collections(first: 10) {
+    edges {
+      node {
+        id
+        handle
+        title
+        products(first: 250) {
+          edges {
+            node {
+              availableForSale
+              description
+              descriptionHtml
+              id
+              images(first: 8) {
+                edges {
+                  node {
+                    altText
+                    src
+                  }
+                }
+              }
+              options(first: 6) {
+                id
+                name
+                values
+              }
+              productType
+              tags
+              title
+              variants(first: 3) {
+                edges {
+                  node {
+                    available
+                    id
+                    image {
+                      altText
+                      src
+                    }
+                    price
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+	
+	
+/*
+	const query = `{
+	   shop {
+	     name
+	   }
+	 }`;
+*/
+	 
+	
+	
+/*
+	const query = `{
+	  collection(id: "182077849642") {
+	    products(query:"title:'test-title'", first: 10) {
+	      edges {
+	        node {
+	          id
+	        }
+	      }
+	    }
+	  }
+	}`;
+*/
+	
+	
+	
+/*
+	const query = `{
+	   shop {
+	     name
+	   }
+	 }`;
+	 
+	function apiCall(query) {
+	  return fetch(shopUrl, {
+	    credentials: 'include',
+	    method: 'POST',
+	    headers: {
+	      'Content-Type': 'application/graphql',
+	      "Access-Control-Origin": "*",
+	      'X-Shopify-Storefront-Access-Token': "abcce6c73f1d06551bd87175f38d467e"
+	    },
+	    "body": query
+	  }).then(response => response.json());
+	}
+	 
+	apiCall(query).then(response => {
+	  console.log(response)
+	});
+*/
+
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', shopUrl, true);
+    request.setRequestHeader('Content-Type', 'application/graphql; charset=UTF-8');
+    request.setRequestHeader('X-Shopify-Storefront-Access-Token', 'abcce6c73f1d06551bd87175f38d467e');
+    request.responseType = 'json';
+
+    request.onload = function() {
+      // Only handle status code 200
+      if(request.status === 200) {
+        // Try to find out the filename from the content disposition `filename` value
+        var disposition = request.getResponseHeader('content-disposition');
+       console.info(disposition);
+      }
+      
+    };
+
+    request.send(query);
+    
+    
+    
+    
+    
+	
+/*
+	var myRequest = new Request({url: 'https://idasoporte.myshopify.com/admin/api/graphql', method: 'post', headers: {'Content-Type': 'application/graphql', 'X-Shopify-Storefront-Access-Token':accessToken}});
+	myRequest.send(query1);
+*/
+
+
+
+/*
+let settings = {
+    'async': true,
+    'crossDomain': true,
+    'url': 'https://idasoporte.myshopify.com/api/graphql',
+    'method': 'POST',
+    'headers': {
+        'X-Shopify-Storefront-Access-Token': 'abcce6c73f1d06551bd87175f38d467e',
+        'Content-Type': 'application/graphql',
+    },
+    'data': query1
+};
+
+var myRequest = new Request(settings);
+myRequest.send();
+*/
+
+// Get checkout URL from shopify
+/*
+return $.ajax(settings).done(function (response) {
+    console.log(response);
+});
+*/
+
+
+	
+	
+/*
+	const fetchQuery1 = () => {
+	    // Define options for first query with no variables and body is string and not a json object
+	    const optionsQuery1 = {
+	        method: "post",
+	        headers: {
+	            "Content-Type": "application/graphql",
+	            "X-Shopify-Storefront-Access-Token": accessToken
+	        },
+	        body: query1
+	    };
+	
+	    // Fetch data and remember product id
+	    fetch(shopUrl + `/api/graphql`, optionsQuery1)
+	        .then(res => res.json())
+	        .then(response => {
+	            productId = response.data.products.edges[0].node.id; 
+	            console.log("=============== Fetch First Product ===============");
+	            console.log(JSON.stringify(response, null, 4));
+	            fetchQuery2(productId)  
+	        });
+	}
+*/
+	
+	//fetchQuery1();
+}
+
+
+
+
+
 
 
 
@@ -1581,7 +1800,9 @@ window.addEvent('domready', function(){
 		if(pageActual !== ''){
 			switch(pageActual){
 				case 'home':
-					home_inicio();
+					//home_inicio();
+					home_shopify();
+					var rellax = new Rellax('.rellax');
 				break;
 				
 				case 'somos':
@@ -1614,8 +1835,8 @@ window.addEvent('domready', function(){
 		}
 	}
 	
-	header_run();
-	footer_run();
+	//header_run();
+	//footer_run();
 	
 });
 
