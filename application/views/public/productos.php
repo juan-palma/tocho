@@ -20,27 +20,27 @@
 				<div class="basicoP">
 					<?php $prenda = "body"; ?>
 					<img src="<?php echo(base_url( 'assets/public/img/productos/productos_'.$genero.'_'.$area.'_'.$prenda.'.png' )); ?>" />
-					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Ver más</div></a>
+					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Personalizar</div></a>
 				</div>
 				<div class="basicoP">
 					<?php $prenda = "licra"; ?>
 					<img src="<?php echo(base_url( 'assets/public/img/productos/productos_'.$genero.'_'.$area.'_'.$prenda.'.png' )); ?>" />
-					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Ver más</div></a>
+					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Personalizar</div></a>
 				</div>
 				<div class="basicoP">
 					<?php $prenda = "short"; ?>
 					<img src="<?php echo(base_url( 'assets/public/img/productos/productos_'.$genero.'_'.$area.'_'.$prenda.'.png' )); ?>" />
-					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Ver más</div></a>
+					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Personalizar</div></a>
 				</div>
 				<div class="basicoP">
 					<?php $prenda = "playera"; ?>
 					<img src="<?php echo(base_url( 'assets/public/img/productos/productos_'.$genero.'_'.$area.'_'.$prenda.'.png' )); ?>" />
-					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Ver más</div></a>
+					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Personalizar</div></a>
 				</div>
 				<div class="basicoP">
 					<?php $prenda = "sudadera"; ?>
 					<img src="<?php echo(base_url( 'assets/public/img/productos/productos_'.$genero.'_'.$area.'_'.$prenda.'.png' )); ?>" />
-					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Ver más</div></a>
+					<a href="<?php echo(base_url( 'productos/'.$genero.'/'.$area.'/'.$prenda )); ?>"><div class="btnVerMas">Personalizar</div></a>
 				</div>
 			</div>
 		<?php
