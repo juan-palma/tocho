@@ -507,6 +507,93 @@ input[type="button"]:hover{
 }
 
 
+
+
+#video_text{
+	width: 100%;
+	height: auto;
+	padding-top: 83px;
+	min-height: calc(56vw + 83px);
+}
+	#videoBtnPlay{
+		width: auto;
+	    height: auto;
+	    max-width: 280px;
+	    display: inline-block;
+	    position: absolute;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    top: 24%;
+	    cursor: pointer;
+	    z-index: 700;
+	}
+		#videoBtnPlay img{
+			width: 100%;
+			height: auto;
+		}
+	#videoControls{
+		width: 40px;;
+	    height: auto;
+	    max-width: 280px;
+	    display: inline-block;
+	    position: absolute;
+	    left: auto;
+	    top: 100px;
+	    right: 3%;
+	    cursor: pointer;
+	    z-index: 700;
+	}
+		#videoControls #videoBtnPausa{
+			width: 100%;
+			height: auto;
+			display: block;
+			cursor: pointer;
+			
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			-ms-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+		}
+		#videoControls #videoBtnPausa:hover{
+			-o-transform: scale3d(1.2, 1.2, 1);
+			-ms-transform: scale3d(1.2, 1.2, 1);
+			-moz-transform: scale3d(1.2, 1.2, 1);
+			-webkit-transform: scale3d(1.2, 1.2, 1);
+			transform: scale3d(1.2, 1.2, 1);
+		}
+			#videoControls #videoBtnPausa img{
+				width: 100%;
+				height: auto;
+			}
+		#videoControls #videoBtnMute{
+			width: 100%;
+			height: auto;
+			display: block;
+			cursor: pointer;
+			margin-top: 13px;
+			
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+		#videoControls #videoBtnMute:hover{
+			-o-transform: scale3d(1.2, 1.2, 1);
+			-ms-transform: scale3d(1.2, 1.2, 1);
+			-moz-transform: scale3d(1.2, 1.2, 1);
+			-webkit-transform: scale3d(1.2, 1.2, 1);
+			transform: scale3d(1.2, 1.2, 1);
+		}
+			#videoControls #videoBtnMute img{
+				width: 100%;
+				height: auto;
+			}
+
+
+
+
 .terminosCheck{
 	width: 100%;
 	text-align: center;
@@ -690,6 +777,17 @@ a .btnVerMas:hover{
 	max-width: 100%;
 }
 
+#mancha {
+	position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+
+
+
+
 /* --- HOME -- */
 body#home{
 	
@@ -720,11 +818,7 @@ body#home{
 		background-size: cover;
 		height: auto;
 	}
-		body#home .mainbox #mancha {
-			position: absolute;
-		    left: 0;
-		    top: 0;
-		}
+		
 		body#home #playeras{
 			padding: 6rem 3rem 5vw;
 		    display: block;
@@ -754,7 +848,112 @@ body#home{
 				width: 100%;
 			}
 		
-		
+
+
+
+
+
+/* --- PRODUCTOS -- */
+body#productos{
+	
+}
+	body#productos .mainbox.bl1 {
+	    justify-content: flex-start;
+		height: auto;
+		z-index: 1;
+	}
+		body#productos #headSec{
+			width: 100%;
+		}
+			body#productos #headSec img{
+				width: 100%;
+				height: auto;
+			}
+			
+	body#productos .mainbox.bl2 {
+	    justify-content: flex-start;
+		flex-direction: row;
+		height: auto;
+		z-index: 0;
+		margin-top: -16vw;
+	}
+		body#productos .mainbox.bl2 div.basicoR {
+		    flex: 1 1 50%;
+		    max-width: 50%;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		}
+			body#productos .mainbox.bl2 div.basicoR img{
+				width: 100%;
+				height: auto;
+			}
+			body#productos .mainbox.bl2 div.basicoR a{
+				position: absolute;
+			}
+			body#productos .mainbox.bl2 div.basicoR:first-child .btnVerMas{
+				border-color: white;
+				color: white;
+			}
+			body#productos .mainbox.bl2 div.basicoR:first-child .btnVerMas:hover{
+				color: black;
+				background-color: white;
+			}
+	
+	body#productos .mainbox.bl1 .ligaRapida {
+	    position: absolute;
+	    left: 6vw;
+	    bottom: 17.5vw;
+	    color: black;
+	    font-size: 90%;
+	}
+		body#productos .mainbox.bl1 .ligaRapida a{
+			color: black;
+		}
+
+	body#productos .mainbox.bl2.bl2p {
+	    flex-direction: column-reverse;
+	}
+		body#productos .mainbox.bl2.bl2p .basicoP {
+		    flex: 1 1 auto;
+		    max-width: 100%;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    margin-top: -9vw;
+		}
+			body#productos .mainbox.bl2.bl2p .basicoP img {
+			    width: 100%;
+			}
+			body#productos .mainbox.bl2 div.basicoP a{
+				position: absolute;
+			}
+			body#productos .mainbox.bl2 div.basicoP:nth-child(2n) .btnVerMas{
+				border-color: white;
+				color: white;
+			}
+			body#productos .mainbox.bl2 div.basicoP:nth-child(2n) .btnVerMas:hover{
+				color: black;
+				background-color: white;
+			}
+			body#productos .mainbox.bl2.bl2p .basicoP:last-child{
+				margin-top: -0vw;
+			}
+			body#productos .mainbox.bl2 div.basicoP:nth-child(2n) a{
+				left: 19vw;
+				margin-top: 10vw;
+			}
+			body#productos .mainbox.bl2 div.basicoP:nth-child(2n+1) a{
+				right: 19vw;
+				margin-top: 10vw;
+			}
+
+
+
+
+
+	
 		
 		
 /* 	Home Quienes Somos */
@@ -795,7 +994,7 @@ body#home{
 			body#home .mainbox.bl2 .cols_box .cols3:nth-child(2) .btnVerMas{
 				border: 3px solid #fff;
 				color: white;
-				margin-top: 6rem;
+/* 				margin-top: 6rem; */
 			}
 
 

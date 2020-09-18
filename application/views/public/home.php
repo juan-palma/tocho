@@ -20,13 +20,13 @@
 	</div>
 	<div class="cols_box">
 		<div class="cols3 rellax" data-rellax-speed="1">
-			<a href=""><div class="btnVerMas">Ver más</div></a>
-		</div>
-		<div class="cols3 rellax" data-rellax-speed="-1">
-			<a href=""><div class="btnVerMas">Ver más</div></a>
+			<a href="<?php echo(base_url( 'productos/hombres' )); ?>"><div class="btnVerMas">Ver más</div></a>
 		</div>
 		<div class="cols3 rellax" data-rellax-speed="1">
-			<a href=""><div class="btnVerMas">Ver más</div></a>
+			<a href="<?php echo(base_url( 'productos/mujeres' )); ?>"><div class="btnVerMas">Ver más</div></a>
+		</div>
+		<div class="cols3 rellax" data-rellax-speed="1">
+			<a href="<?php echo(base_url( 'productos/ninos' )); ?>"><div class="btnVerMas">Ver más</div></a>
 		</div>
 	</div>
 </div>

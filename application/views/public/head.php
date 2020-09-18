@@ -318,6 +318,10 @@ if(property_exists($generalDB, "youtube") && $generalDB->youtube !== ''){
 <!-- 	FIN SVG -->
 		
 		<nav id="nav" class="onlyDesktop">
+			<div id="mancha">
+				<img src="<?php echo(base_url( 'assets/public/img/mancha.png' )); ?>" />
+			</div>
+			
 			<div id="logo"><a href="<?php echo(base_url()); ?>"><img src="<?php echo(base_url('assets/public/img/tocho-logo.svg')); ?>"></img></a></div>
 <!--
 			<div id="menus">

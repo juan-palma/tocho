@@ -1592,10 +1592,96 @@ function home_shopify(){
 */
 	
 	
-	const shopUrl = "https://idasoporte.myshopify.com/api/graphql";
-	const accessToken = "abcce6c73f1d06551bd87175f38d467e";
+	const shopUrl = "https://tocho-ropa-deportiva.myshopify.com/api/graphql";
+	const accessToken = "010a395b12b4ede346efe5d51d53410c";
 	
 	// Simple GraphQL with no variables
+	const query = `{
+  collectionByHandle(handle: "hombres") {
+    title
+    products(first: 20) {
+      edges {
+        node {
+          availableForSale
+          descriptionHtml
+          handle
+          images(first: 10) {
+            edges {
+              node {
+                altText
+                src
+              }
+            }
+          }
+          options {
+            name
+            values
+          }
+          title
+          variants(first: 100) {
+            edges {
+              node {
+                available
+                availableForSale
+                image {
+                  altText
+                  src
+                }
+                price
+                sku
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+	`;
+/*
+	const query = `{
+  products(query: "collection:'hombre' AND handle:'short'", first: 1) {
+    edges {
+      node {
+        id
+        images(first: 10) {
+          edges {
+            node {
+              altText
+              id
+              src
+            }
+          }
+        }
+        handle
+        title
+        variants(first: 90) {
+          edges {
+            node {
+              title
+              id
+              price
+              available
+              availableForSale
+              image {
+                altText
+                src
+              }
+              sku
+            }
+            cursor
+          }
+        }
+        availableForSale
+        descriptionHtml
+      }
+    }
+  }
+}
+`;
+*/
+/*
 	const query = `{
   collections(first: 10) {
     edges {
@@ -1647,6 +1733,43 @@ function home_shopify(){
   }
 }
 `;
+*/
+
+/*
+	query = `{
+	  products(query: "collection:'hombre'", first: 10) {
+	    edges {
+	      node {
+	        id
+	        images(first: 10) {
+	          edges {
+	            node {
+	              altText
+	              id
+	              src
+	            }
+	          }
+	        }
+	        description
+	        handle
+	        title
+	        variants(first: 90) {
+	          edges {
+	            node {
+	              title
+	              id
+	              price
+	            }
+	            cursor
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
+	`;
+*/
+
 	
 	
 /*
@@ -1704,7 +1827,7 @@ function home_shopify(){
 	var request = new XMLHttpRequest();
     request.open('POST', shopUrl, true);
     request.setRequestHeader('Content-Type', 'application/graphql; charset=UTF-8');
-    request.setRequestHeader('X-Shopify-Storefront-Access-Token', 'abcce6c73f1d06551bd87175f38d467e');
+    request.setRequestHeader('X-Shopify-Storefront-Access-Token', '010a395b12b4ede346efe5d51d53410c');
     request.responseType = 'json';
 
     request.onload = function() {
