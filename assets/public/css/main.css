@@ -914,6 +914,7 @@ body#productos{
 
 	body#productos .mainbox.bl2.bl2p {
 	    flex-direction: column-reverse;
+	    align-items: stretch;
 	}
 		body#productos .mainbox.bl2.bl2p .basicoP {
 		    flex: 1 1 auto;
