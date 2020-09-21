@@ -1568,9 +1568,155 @@ function footer_run(){
 
 
 
+var normalize = (function() {
+  var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç", 
+      to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+      mapping = {};
+ 
+  for(var i = 0, j = from.length; i < j; i++ )
+      mapping[ from.charAt( i ) ] = to.charAt( i );
+ 
+  return function( str ) {
+      var ret = [];
+      for( var i = 0, j = str.length; i < j; i++ ) {
+          var c = str.charAt( i );
+          if( mapping.hasOwnProperty( str.charAt( i ) ) )
+              ret.push( mapping[ c ] );
+          else
+              ret.push( c );
+      }      
+      return ret.join( '' ).replace( /[^-A-Za-z0-9]+/g, '' ).toLowerCase();
+  }
+ 
+})();
 
 
-function home_shopify(){
+
+var peegf = {};
+function controlConecciones(){
+	var boxModelos = document.id('valoresBoxColeccionModelos');
+	boxModelos.empty();
+	
+	prenda.estampado[this.idaVal.valor].modelos.each(function(m){
+		var box = new Element('div', {'class':'modeloBox'});
+			var imgBox = new Element('div', {'class':'boxImgM'});
+				var img = new Element('img', {'src':m.imagen});
+				imgBox.grab(img);
+			var titulo = new Element('span', {'html':m.titulo});
+			box.adopt([imgBox, titulo]);
+		boxModelos.grab(box);
+	});
+}
+
+function activarFijosPrenda(){
+	var coleccciones = $$('#prendaVFija .optionBoxColValores .prendaBoxColeccion .prendaColeccionImg');
+	coleccciones.each(function(c, index){
+		c.idaVal = {};
+		c.idaVal.valor = index;
+		c.addEvent('click', function(){
+			controlConecciones.call(this);
+		});
+	});
+}
+
+
+
+
+var peeg = {};
+peeg.op = [];
+function getOptionSelect(){
+	var conjunto = "";
+	
+	peeg.op.each(function(o, index){
+		if(index !== 0){ conjunto += " / " }
+		conjunto += peeg[o.name].valorActivo;
+	});
+	
+	var datosActivos = null;
+	peeg.query.data.products.edges[0].node.variants.edges.each(function(ov){
+		if(ov.node.title == conjunto){
+			datosActivos = ov.node;
+		}
+	});
+	
+	console.info(datosActivos);
+	var mainImageBox = document.id('prendaI');
+	var imagen = new Element('img', {'src':datosActivos.image.src, 'alt':datosActivos.image.altText});
+	mainImageBox.empty().grab(imagen);
+}
+
+function opcionesInteraccion(){
+	console.info(peeg[this.idaVal.opcion].btnActivo);
+	if(peeg[this.idaVal.opcion].btnActivo !== ""){
+		peeg[this.idaVal.opcion].btnActivo.removeClass('activo');
+	}
+	
+	peeg[this.idaVal.opcion].btnActivo = this
+	this.addClass('activo');
+	peeg[this.idaVal.opcion].valorActivo = this.idaVal.valor;
+	
+	getOptionSelect();
+}
+
+function colocarPrenda(j){
+	peeg.query = j;
+	console.info(j.data.products.edges[0].node);
+	var v = j.data.products.edges[0].node;
+	var mainImageBox = document.id('prendaI');
+	var mainInfoBox = document.id('prendaVDinamica');
+	
+	peeg.op = v.options;
+	v.options.each(function(o){
+		peeg[o.name] = {};
+		peeg[o.name].valorActivo = o.values[0];
+		peeg[o.name].btnActivo = "";
+		
+		var laClase = "optionValue";
+		if(o.name == "Talla" || o.name == "Size"){
+			laClase += " optionTalla";
+		} else if(o.name == "Color"){
+			laClase += " optionColor";
+		}
+		
+		var boxOpcion = new Element('div', {'class':'mainBoxOption'});
+			var boxOptionTitulo = new Element('div', {'class':'optionTitulo', 'html':o.name});
+			var boxOptionBoxValores = new Element('div', {'class':'optionBoxMainValores'});
+			o.values.each(function(va, index){
+				var boxOptionValues = new Element('span', {'class':laClase, 'html':va});
+					boxOptionValues.idaVal = {'opcion':o.name, 'valor':va};
+					boxOptionValues.addEvent('click', function(){
+						opcionesInteraccion.call(this);
+					});
+				if(index === 0){ peeg[o.name].btnActivo = boxOptionValues; boxOptionValues.addClass('activo'); }
+				
+				if(o.name == "Color"){
+					var miniBoxColor = new Element('div', {'class':'miniBoxColor'});
+					var cclean = normalize(va);
+					//var nameClean = "color"
+						var circuloColor = new Element('div', {'class':'circuloColor color'+cclean});
+							circuloColor.idaVal = {'opcion':o.name, 'valor':va};
+							circuloColor.addEvent('click', function(){
+								opcionesInteraccion.call(this);
+							});
+							var boxOptionValues = new Element('span', {'class':laClase, 'html':va});
+					
+					if(index === 0){ peeg[o.name].btnActivo = circuloColor; circuloColor.addClass('activo'); }
+					miniBoxColor.adopt([circuloColor, boxOptionValues]);
+					boxOptionBoxValores.grab(miniBoxColor);
+				} else{
+					boxOptionBoxValores.grab(boxOptionValues);
+				}
+			});
+		boxOpcion.adopt([boxOptionTitulo, boxOptionBoxValores]);
+		
+		mainInfoBox.grab(boxOpcion);
+	});
+	
+	getOptionSelect();
+}
+
+
+function shopify(genero, valorA){
 /*
 	import Client from 'shopify-buy';
 
@@ -1596,8 +1742,64 @@ function home_shopify(){
 	const accessToken = "010a395b12b4ede346efe5d51d53410c";
 	
 	// Simple GraphQL with no variables
+	const query = `
+		{
+		  products(query: "tag:'personalizable' AND tag:'`+genero+`' AND tag:'`+valorA+`'", first: 1) {
+		    edges {
+		      node {
+		        id
+		        handle
+		        descriptionHtml
+		        variants(first: 99) {
+		          edges {
+		            node {
+		              price
+		              title
+		              product {
+		                descriptionHtml
+		                handle
+		                images(first: 10) {
+		                  edges {
+		                    node {
+		                      altText
+		                      src
+		                    }
+		                  }
+		                }
+		                title
+		              }
+		              id
+		              sku
+		              image {
+		                altText
+		                src
+		              }
+		            }
+		          }
+		        }
+		        options {
+		          name
+		          values
+		        }
+		        title
+		        images(first: 10) {
+		          edges {
+		            node {
+		              altText
+		              src
+		            }
+		          }
+		        }
+		      }
+		    }
+		  }
+		}
+	`;
+	
+	
+/*
 	const query = `{
-  collectionByHandle(handle: "hombres") {
+  collectionByHandle(handle: "`+area+`") {
     title
     products(first: 20) {
       edges {
@@ -1639,6 +1841,9 @@ function home_shopify(){
   }
 }
 	`;
+*/
+	
+	
 /*
 	const query = `{
   products(query: "collection:'hombre' AND handle:'short'", first: 1) {
@@ -1831,13 +2036,10 @@ function home_shopify(){
     request.responseType = 'json';
 
     request.onload = function() {
-      // Only handle status code 200
-      if(request.status === 200) {
-        // Try to find out the filename from the content disposition `filename` value
-        var disposition = request.getResponseHeader('content-disposition');
-       console.info(disposition);
-      }
-      
+    	// Only handle status code 200
+		if(request.status === 200) {
+			colocarPrenda(request.response);
+		}
     };
 
     request.send(query);
@@ -1924,7 +2126,6 @@ window.addEvent('domready', function(){
 			switch(pageActual){
 				case 'home':
 					//home_inicio();
-					home_shopify();
 					var rellax = new Rellax('.rellax');
 				break;
 				
@@ -1955,6 +2156,13 @@ window.addEvent('domready', function(){
 				break;
 				
 			}
+		}
+	}
+	
+	if(typeof prendaSi !== 'undefined'){
+		if(prendaSi === true){
+			shopify(genero, valorA);
+			activarFijosPrenda();
 		}
 	}
 	

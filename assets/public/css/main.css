@@ -949,6 +949,258 @@ body#productos{
 				right: 19vw;
 				margin-top: 10vw;
 			}
+	
+	
+	#prenda_inter_fondo{
+		width: 100%;
+		height: auto;
+		position: relative;
+		background-size: cover;
+	}
+	body#productos .mainbox.bl1.bl1pi{
+		width: 100%;
+		padding: 3rem;
+	}
+		body#productos .mainbox.bl1.bl1pi h1{
+			font-family: 'Dreamwalker';
+			align-self: flex-end;
+			font-size: 11vw;
+			letter-spacing: 14px;
+		}
+	body#productos .mainbox.bl3.bl3pi{
+		padding: 0px 3rem 10rem 0px;
+		flex-direction: row;
+		height: auto;
+		align-items: flex-start;
+	}
+		#prendaI{
+			flex: 1 1 60%;
+			max-width: 60%;
+		}
+			#prendaI img{
+				width: 100%;
+			}
+		
+		#prendaV{
+			flex: 1 1 40%;
+			max-width: 40%;
+		}
+			#prendaV .optionTitulo {
+			    font-size: 110%;
+			    font-weight: bold;
+			    padding-bottom: 10px;
+			}
+			#prendaV .optionBoxMainValores {
+			    padding-bottom: 20px;
+			    display: flex;
+			}
+				#prendaV .optionBoxMainValores .optionValue {
+				    padding: 8px 19px;
+				    margin-right: 8px;
+				    background-color: transparent;
+				    font-size: 1.8vw;
+				    border-radius: 3vw;
+				    cursor: pointer;
+				    border: 1px solid #000;
+				    opacity: 0.34;
+				    color: #000;
+				    
+				    -webkit-transition: all 0.2s ease-in-out;
+					-moz-transition: all 0.2s ease-in-out;
+					-o-transition: all 0.2s ease-in-out;
+					-ms-transition: all 0.2s ease-in-out;
+					transition: all 0.2s ease-in-out;
+				}
+				#prendaV .optionBoxMainValores .optionValue:hover,
+				#prendaV .optionBoxMainValores .optionValue.activo{
+					background-color: #f3bf1c;
+					border-color: #f3bf1c;
+					color: #fff;
+					opacity: 1;
+				}
+				#prendaV .optionBoxMainValores .optionTalla {
+				    text-transform: uppercase;
+				}
+				
+				#prendaV .optionBoxMainValores .miniBoxColor {
+				    width: 64px;
+				    display: flex;
+				    flex-direction: column;
+				    justify-content: flex-start;
+				    align-items: center;
+				    text-align: center;
+				}
+					#prendaV .optionBoxMainValores .circuloColor {
+					    width: 38px;
+					    height: 38px;
+					    border-radius: 20px;
+					    cursor: pointer;
+					    
+					    -webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						-ms-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
+					}
+					#prendaV .optionBoxMainValores .circuloColor:hover,
+					#prendaV .optionBoxMainValores .circuloColor.activo{
+						border: 5px solid burlywood;
+					}
+					#prendaV .optionBoxMainValores .miniBoxColor .optionValue.optionColor {
+					    border: 0px none transparent;
+					    padding: 0px;
+					    opacity: 1;
+					    margin: 0px;
+					    cursor: default;
+					    font-size: 80%;
+					}
+					#prendaV .optionBoxMainValores .miniBoxColor .optionValue.optionColor:hover,
+					#prendaV .optionBoxMainValores .miniBoxColor .optionValue.optionColor.activo{
+						color: #000;
+						background-color: transparent;
+					}
+					
+					#prendaV .optionBoxColValores{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-content: flex-start;
+					}
+						#prendaV .optionBoxColValores .prendaBoxColeccion {
+						    display: flex;
+						    justify-content: flex-start;
+						    align-items: center;
+						    padding: 6px;
+						}
+							#prendaV .optionBoxColValores .prendaColeccionImg {
+							    width: 42px;
+							    height: 42px;
+							    border-radius: 20px;
+							    margin-right: 10px;
+							    cursor: pointer;
+							}
+						#valoresBoxColeccionModelos {
+						    min-height: 94px;
+						    display: flex;
+						    width: 100%;
+							max-width: 100%;
+						}
+							.modeloBox {
+							    display: flex;
+							    flex-direction: column;
+							    padding: 8px;
+							    text-align: center;
+							    font-size: 90%;
+							}
+								.boxImgM {
+								    width: 86px;
+								    height: 86px;
+								    overflow: hidden;
+								    border-radius: 48px;
+								}
+					#prendaV .mainBoxOptionCol {
+					    display: grid;
+					    padding: 2rem 0px 0px 0px;
+					    grid-auto-flow: column;
+					    column-gap: 24px;
+					    grid-template-columns: 50% 50%;
+					}
+					
+					#prendaV input[type="text"] {
+					    background: none;
+					    border: none;
+					    -webkit-appearance: none;
+					    -moz-appearance: none;
+					    appearance: none;
+					    -ms-appearance: none;
+					    border-bottom: 2px solid black;
+					}
+					#prendaV select {
+					    border: none;
+					    -webkit-appearance: none;
+					    -moz-appearance: none;
+					    appearance: none;
+					    -ms-appearance: none;
+					    background: none;
+					    border: 2px solid black;
+					    padding: 6px 20px;
+					    width: 100%;
+					    border-radius: 20px;
+					    cursor: pointer;
+					    text-align: center;
+					    
+					    -webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						-ms-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
+					}
+					#prendaV select:focus{
+						outline: none !important;
+					}
+					#prendaV select:hover{
+						background-color: #f3bf1c;
+					}
+					#prendaV input[type="file"] {
+					    background: none;
+					    border: none;
+					    -webkit-appearance: none;
+					    -moz-appearance: none;
+					    appearance: none;
+					    -ms-appearance: none;
+					    width: 100%;
+					}
+					#prendaV input[type="submit"] {
+					    border: none;
+					    -webkit-appearance: none;
+					    -moz-appearance: none;
+					    appearance: none;
+					    -ms-appearance: none;
+					    background: none;
+					    border: 0px none transparent;
+					    padding: 8px 20px;
+					    width: 100%;
+					    border-radius: 20px;
+					    cursor: pointer;
+					    text-align: center;
+					    background-color: #f3bf1c;
+					    color: white;
+					    
+					    -webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						-ms-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
+					}
+					#prendaV input[type="submit"]:hover{
+						background-color: #000;
+					}
+					
+					
+					.colorazul{
+						background-color: #2361d2;
+					}
+					.colorvioleta{
+						background-color: #b2b1d4;
+					}
+					.colorverde{
+						background-color: #1fa159;
+					}
+					.colornegro{
+						background-color: #000;
+					}
+					.colorcafe{
+						background-color: #684707;
+					}
+					.colorrosa{
+						background-color: #ef86ff;
+					}
+					.colorblanco{
+						background-color: #fff;
+					}
+					.colorgris{
+						background-color: #a4a4a4;
+					}
 
 
 
