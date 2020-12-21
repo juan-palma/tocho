@@ -16,7 +16,19 @@
 
 <div class="mainbox bl2">
 	<div id="generos">
-		<img src="<?php echo(base_url( 'assets/public/img/home_sec2_generos.png' )); ?>" />
+<!-- 		<img src="<?php echo(base_url( 'assets/public/img/home_sec2_generos.png' )); ?>" /> -->
+		<div class="cols3 rellax" data-rellax-speed="1">
+			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_hombre.jpg' )); ?>" />
+			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_hombre_over.jpg' )); ?>" />
+		</div>
+		<div class="cols3 rellax" data-rellax-speed="1">
+			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_mujer.jpg' )); ?>" />
+			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_mujer_over.jpg' )); ?>" />
+		</div>
+		<div class="cols3 rellax" data-rellax-speed="1">
+			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_nino.jpg' )); ?>" />
+			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_nino_over.jpg' )); ?>" />
+		</div>
 	</div>
 	<div class="cols_box">
 		<div class="cols3 rellax" data-rellax-speed="1">
