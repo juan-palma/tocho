@@ -450,6 +450,20 @@ function home_inicio(){
 
 
 
+function home_inicio2(){
+	let generos = ["Hombre", "Mujer", "Nino"];
+	
+	generos.each(function(g){
+		document.id('btn'+g).addEvent('mouseover', function(){
+			document.id('over'+g).removeClass('oculto');
+		}).addEvent('mouseout', function(){
+			document.id('over'+g).addClass('oculto');
+		});
+	});
+}
+
+
+
 
 
 
@@ -2127,6 +2141,19 @@ window.addEvent('domready', function(){
 				case 'home':
 					//home_inicio();
 					var rellax = new Rellax('.rellax');
+					home_inicio2();
+				break;
+				
+				case 'productos':
+					let generos = ["Basico", "Personalizado"];
+					
+					generos.each(function(g){
+						document.id('btn'+g).addEvent('mouseover', function(){
+							document.id('over'+g).removeClass('oculto');
+						}).addEvent('mouseout', function(){
+							document.id('over'+g).addClass('oculto');
+						});
+					});
 				break;
 				
 				case 'somos':

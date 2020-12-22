@@ -16,29 +16,20 @@
 
 <div class="mainbox bl2">
 	<div id="generos">
-<!-- 		<img src="<?php echo(base_url( 'assets/public/img/home_sec2_generos.png' )); ?>" /> -->
-		<div class="cols3 rellax" data-rellax-speed="1">
-			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_hombre.jpg' )); ?>" />
-			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_hombre_over.jpg' )); ?>" />
-		</div>
-		<div class="cols3 rellax" data-rellax-speed="1">
-			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_mujer.jpg' )); ?>" />
-			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_mujer_over.jpg' )); ?>" />
-		</div>
-		<div class="cols3 rellax" data-rellax-speed="1">
-			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_nino.jpg' )); ?>" />
-			<img src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_nino_over.jpg' )); ?>" />
-		</div>
+		<img src="<?php echo(base_url( 'assets/public/img/home_sec2_generos.png' )); ?>" />
+		<img class="over3 oculto" id="overHombre" src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_hombre_over.png' )); ?>" />
+		<img class="over3 oculto" id="overMujer" src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_mujer_over.png' )); ?>" />
+		<img class="over3 oculto" id="overNino" src="<?php echo(base_url( 'assets/public/img/home_sec2_genero_nino_over.png' )); ?>" />
 	</div>
 	<div class="cols_box">
 		<div class="cols3 rellax" data-rellax-speed="1">
-			<a href="<?php echo(base_url( 'productos/hombres' )); ?>"><div class="btnVerMas">Ver más</div></a>
+			<a id="btnHombre" href="<?php echo(base_url( 'productos/hombres' )); ?>"><div class="btnVerMas">Ver más</div></a>
 		</div>
 		<div class="cols3 rellax" data-rellax-speed="1">
-			<a href="<?php echo(base_url( 'productos/mujeres' )); ?>"><div class="btnVerMas">Ver más</div></a>
+			<a id="btnMujer" href="<?php echo(base_url( 'productos/mujeres' )); ?>"><div class="btnVerMas">Ver más</div></a>
 		</div>
 		<div class="cols3 rellax" data-rellax-speed="1">
-			<a href="<?php echo(base_url( 'productos/ninos' )); ?>"><div class="btnVerMas">Ver más</div></a>
+			<a id="btnNino" href="<?php echo(base_url( 'productos/ninos' )); ?>"><div class="btnVerMas">Ver más</div></a>
 		</div>
 	</div>
 </div>

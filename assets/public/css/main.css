@@ -752,7 +752,7 @@ a .btnVerMas{
     padding: 8px 40px;
     border: 3px solid var(--colorPrincipal);
     border-radius: 16px;
-    margin-top: 2.5rem;
+    margin-top: 0rem;
     cursor: pointer;
     color: black;
         
@@ -763,8 +763,10 @@ a .btnVerMas{
 	transition: all 0.2s ease-in-out;
 }
 a .btnVerMas:hover{
-	background-color: var(--colorPrincipal);
-	color: white;
+/* 	background-color: var(--colorPrincipal); */
+	background-color: white;
+	color: black;
+	border: 3px solid white;
 }
 .titulo{
 	font-family: 'Dreamwalker';
@@ -884,6 +886,7 @@ body#productos{
 		    flex-direction: column;
 		    justify-content: center;
 		    align-items: center;
+		    position: relative;
 		}
 			body#productos .mainbox.bl2 div.basicoR img{
 				width: 100%;
@@ -891,14 +894,33 @@ body#productos{
 			}
 			body#productos .mainbox.bl2 div.basicoR a{
 				position: absolute;
+				margin-top: 3rem;
 			}
 			body#productos .mainbox.bl2 div.basicoR:first-child .btnVerMas{
+/*
 				border-color: white;
 				color: white;
+*/
 			}
 			body#productos .mainbox.bl2 div.basicoR:first-child .btnVerMas:hover{
 				color: black;
 				background-color: white;
+			}
+			body#productos .mainbox.bl2 div.basicoR img.over3 {
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    left: 0px;
+			    top: 0px;
+			    
+			    -webkit-transition: all 0.4s ease-in-out;
+				-moz-transition: all 0.4s ease-in-out;
+				-o-transition: all 0.4s ease-in-out;
+				-ms-transition: all 0.4s ease-in-out;
+				transition: all 0.4s ease-in-out;
+			}
+			body#productos .mainbox.bl2 div.basicoR .oculto{
+				opacity: 0;
 			}
 	
 	body#productos .mainbox.bl1 .ligaRapida {
@@ -1224,6 +1246,22 @@ body#productos{
 				width: 100%;
 				height: auto;
 			}
+			body#home .mainbox.bl2 #generos img.over3 {
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    left: 0px;
+			    top: 0px;
+			    
+			    -webkit-transition: all 0.4s ease-in-out;
+				-moz-transition: all 0.4s ease-in-out;
+				-o-transition: all 0.4s ease-in-out;
+				-ms-transition: all 0.4s ease-in-out;
+				transition: all 0.4s ease-in-out;
+			}
+			body#home .mainbox.bl2 #generos .oculto{
+				opacity: 0;
+			}
 		body#home .mainbox.bl2 .cols_box{
 			position: absolute;
 		    display: flex;
@@ -1240,15 +1278,17 @@ body#productos{
 				body#home .mainbox.bl2 .cols_box .cols3 a{
 					width: 80%;
 					max-width: 168px;
+					margin-top: 21rem;
 				}
 					body#home .mainbox.bl2 .cols_box .cols3 a .btnVerMas{
-						margin-top: 18.5rem;
+						
 					}
+/*
 			body#home .mainbox.bl2 .cols_box .cols3:nth-child(2) .btnVerMas{
 				border: 3px solid #fff;
 				color: white;
-/* 				margin-top: 6rem; */
 			}
+*/
 
 
 
