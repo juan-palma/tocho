@@ -2,80 +2,132 @@
 	$prenda = new stdClass;
 	$prenda->estampados = [];
 	
-	$estampados = new stdClass;
-	$estampados->titulo = "Colección 1";
-	$estampados->imagen = "imagen";
-		$estampados->modelos = [];
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 1";
-			$modelos->imagen = base_url( 'assets/public/img/productos/prenda_hombres_sudaderas_equipo1_m1.jpg' );
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 2";
-			$modelos->imagen = base_url( 'assets/public/img/productos/prenda_hombres_sudaderas_equipo1_m2.jpg' );
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 3";
-			$modelos->imagen = base_url( 'assets/public/img/productos/prenda_hombres_sudaderas_equipo1_m3.jpg' );
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 4";
-			$modelos->imagen = base_url( 'assets/public/img/productos/prenda_hombres_sudaderas_equipo1_m4.jpg' );
-			$estampados->modelos[] = $modelos;
-	$prenda->estampados[] = $estampados;
+	//print_r($sudadera_generalDB);
+	//print_r($sudadera_colorDB);
+	//print_r($sudadera_estampadosDB);
 	
-	$estampados = new stdClass;
-	$estampados->titulo = "Colección 2";
-	$estampados->imagen = "imagen2";
-		$estampados->modelos = [];
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 1";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 2";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 3";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 4";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-	$prenda->estampados[] = $estampados;
+	if(isset($sudadera_estampadosDB)){
+		if(property_exists($sudadera_estampadosDB, 'portada')){
+			foreach ($sudadera_estampadosDB->portada->clone as $i=>$v) {
+				$estampados = new stdClass;
+				$estampados->titulo = $v->sudadera_estampado_name;
+				$estampados->imagen = "imagen";
+				
+				$val = "";
+				$fotoName = "portada";
+				if(is_object($sudadera_estampadosDB->imgs->{$fotoName})){
+					$num = strval($i+1);
+					if(isset($sudadera_estampadosDB->imgs->{$fotoName}->{$num})){
+						$val = $sudadera_estampadosDB->imgs->{$fotoName}->{$num};
+					}
+				}
+				if(is_array($sudadera_estampadosDB->imgs->{$fotoName})){
+					if(isset($sudadera_estampadosDB->imgs->{$fotoName}[(int)$i])){
+						$val = $sudadera_estampadosDB->imgs->{$fotoName}[(int)$i];
+					}
+				}
+				if($val !== ""){
+					$estampados->portada = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/estampado/'.$val );
+				}
+				
+				$estampados->modelos = [];
+					for ($im = 1; $im <= 4; $im++) {
+					    $modelos = new stdClass;
+						$modelos->titulo = "Modelo ".$im;
+						$val = "";
+						$fotoName = "model".$im;
+						if(is_object($sudadera_estampadosDB->imgs->{$fotoName})){
+							$num = strval($i+1);
+							if(isset($sudadera_estampadosDB->imgs->{$fotoName}->{$num})){
+								$val = $sudadera_estampadosDB->imgs->{$fotoName}->{$num};
+							}
+						}
+						if(is_array($sudadera_estampadosDB->imgs->{$fotoName})){
+							if(isset($sudadera_estampadosDB->imgs->{$fotoName}[(int)$i])){
+								$val = $sudadera_estampadosDB->imgs->{$fotoName}[(int)$i];
+							}
+						}
+						if($val !== ""){
+							$modelos->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/estampado/'.$val );
+							$estampados->modelos[] = $modelos;
+						}
+						
+					}
+					
+				$estampados->modelosP = [];
+					for ($im = 1; $im <= 4; $im++) {
+					    $modelosP = new stdClass;
+						$modelosP->titulo = "Prenda del Modelo ".$im;
+						$val = "";
+						$fotoName = "model".$im."p";
+						if(is_object($sudadera_estampadosDB->imgs->{$fotoName})){
+							$num = strval($i+1);
+							if(isset($sudadera_estampadosDB->imgs->{$fotoName}->{$num})){
+								$val = $sudadera_estampadosDB->imgs->{$fotoName}->{$num};
+							}
+						}
+						if(is_array($sudadera_estampadosDB->imgs->{$fotoName})){
+							if(isset($sudadera_estampadosDB->imgs->{$fotoName}[(int)$i])){
+								$val = $sudadera_estampadosDB->imgs->{$fotoName}[(int)$i];
+							}
+						}
+						if($val !== ""){
+							$modelosP->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/estampado/'.$val );
+							$estampados->modelosP[] = $modelosP;
+						}
+						
+					}
+					
+					
+				$prenda->estampados[] = $estampados;
+			}
+		}
+	}
 	
-	$estampados = new stdClass;
-	$estampados->titulo = "Colección 3";
-	$estampados->imagen = "imagen3";
-		$estampados->modelos = [];
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 1";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 2";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 3";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-			
-			$modelos = new stdClass;
-			$modelos->titulo = "Modelo 4";
-			$modelos->imagen = "imagenm";
-			$estampados->modelos[] = $modelos;
-	$prenda->estampados[] = $estampados;
+	
+	
+	if(isset($sudadera_generalDB)){
+		if(property_exists($sudadera_generalDB, 'sudadera_tipo_corte')){
+			$prenda->corte = [];
+			//$prenda->corte[] = "Fit";
+			$cortes = explode(",", $sudadera_generalDB->sudadera_tipo_corte);
+			foreach ($cortes as $i=>$v) {
+				$prenda->corte[] = trim($v);
+			}
+		}
+	}
+	
+	
+	
+	if(isset($sudadera_colorDB)){
+		if(property_exists($sudadera_colorDB, 'prenda')){
+			$prenda->sombra = $sudadera_colorDB->imgs->sombra;
+			$prenda->color = [];
+			//$prenda->color[] = "Equipo 1";
+			foreach ($sudadera_colorDB->prenda->clone as $i=>$v) {
+				$prendacolor = new stdClass;
+				$prendacolor->nombre = $v->sudadera_color_name;
+				$prendacolor->color = $v->sudadera_color_valor;
+				$prendacolor->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/color/'.$sudadera_colorDB->imgs->prenda[$i] );
+				
+				$prenda->color[] = $prendacolor;
+			}
+		}
+	}
+	
+	
+	
+	if(isset($sudadera_generalDB)){
+		if(property_exists($sudadera_generalDB, 'sudadera_tipo_ubicacion')){
+			$prenda->ubicacion = [];
+			//$prenda->corte[] = "Fit";
+			$cortes = explode(",", $sudadera_generalDB->sudadera_tipo_ubicacion);
+			foreach ($cortes as $i=>$v) {
+				$prenda->ubicacion[] = trim($v);
+			}
+		}
+	}
+	
 		
 	
 	$prenda->equipo = [];
@@ -93,11 +145,13 @@
 	$prenda->liga[] = "Liga 5";
 	
 	
+/*
 	$prenda->ubicacion = [];
 	$prenda->ubicacion[] = "centro";
 	$prenda->ubicacion[] = "derecha";
 	$prenda->ubicacion[] = "izquierda";
 	$prenda->ubicacion[] = "lateral";
+*/
 	
 	
 	$prenda->tipografia = [];
@@ -116,7 +170,7 @@
 				var area = "<?php echo($area); ?>";
 				var valorA = "<?php echo($valorA); ?>";
 				var prenda = {};
-				prenda.estampado = <?php print_r(json_encode($prenda->estampados)); ?>
+				prenda = <?php print_r(json_encode($prenda)); ?>
 			</script>
 			
 			<div id="prenda_inter_fondo" style="background-image: url(<?php echo(base_url( 'assets/public/img/productos/prendas_fondo.jpg' )); ?> )">
@@ -125,21 +179,100 @@
 				</div>
 				
 				<div class="mainbox bl3 bl3pi">
-					<div id="prendaI"></div>
+					<div id="prendaI">
+						<div id="prendaBaseColor" class="prendaSuperPuesta">
+ 							
+						</div>
+						
+						<div id="prendaEstampado" class="prendaSuperPuesta">
+							
+						</div>
+						
+						<div id="prendaLogo" class="prendaSuperPuesta">
+							
+						</div>
+						
+						<div id="prendaNumero" class="prendaSuperPuesta">
+							<div class="posCentro">
+								<span></span>
+							</div>
+							<div class="posDerecha">
+								<span></span>
+							</div>
+							<div class="posIzquierda">
+								<span></span>
+							</div>
+						</div>
+						
+						<div id="prendaNombre" class="prendaSuperPuesta">
+							<div class="posCentro">
+								<span></span>
+							</div>
+						</div>
+						
+						<div id="prendaSombra" class="">
+							<img src="<?php echo(base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/color/'.$prenda->sombra )); ?>" />
+						</div>
+					</div>
+					
 					<div id="prendaV">
 						<div id="prendaVDinamica"></div>
 						<div id="prendaVFija">
-							<div class="mainBoxOption">
+							<div class="mainBoxOptionCorte">
+								<div class="optionTitulo">Tipo de Corte</div>
+								<div class="optionBoxMainValores">
+									<?php
+										foreach($prenda->corte as $i=>$e){
+											?>
+											<div class="">
+												<span class="optionValue"><?php echo($e) ?></span>
+											</div>
+											<?php
+										}
+									?>
+								</div>
+							</div>
+							
+							<div class="mainBoxOptionColor">
+								<div class="optionTitulo">Base de sudadera - Color</div>
+								<div class="optionBoxMainValores">
+									<?php
+										foreach($prenda->color as $i=>$e){
+											?>
+											<div class="miniBoxColor" data-color="<?php echo($e->nombre) ?>">
+												<div class="circuloColor" style="background-color:<?php echo($e->color) ?>;"></div>
+												<span class="optionValue optionColor"><?php echo($e->nombre) ?></span>
+											</div>
+											<?php
+										}
+									?>
+								</div>
+							</div>
+							
+							
+							<div class="mainBoxOptionEstampado">
 								<div class="optionTitulo">Estampados</div>
 								<div class="optionBoxColValores">
+									<div id="sinEstampado">
+										<div class="prendaBoxColeccion">
+											<div class="btnPrendaColec">
+												<div class="prendaColeccionImg" style="background-image: url(<?php echo( base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/estampado/sinColeccion.png' ) ); ?>)">
+ 													
+												</div>
+												<div class="prendaColeccionTitulo">Sin coleccion</div>
+											</div>
+										</div>
+									</div>
 									<?php
 										foreach($prenda->estampados as $i=>$e){
 											?>
 											<div class="prendaBoxColeccion">
-												<div class="prendaColeccionImg" style="background-image: url(<?php echo(base_url( 'assets/public/img/productos/prenda_hombres_sudaderas_equipo'.($i+1).'.jpg' )); ?>)">
- 												<!--	<img src="<?php echo($e->imagen) ?>" /> -->
+												<div class="btnPrendaColec">
+													<div class="prendaColeccionImg" style="background-image: url(<?php echo($e->portada); ?>)">
+	 												<!--	<img src="<?php echo($e->imagen) ?>" /> -->
+													</div>
+													<div class="prendaColeccionTitulo"><?php echo($e->titulo) ?></div>
 												</div>
-												<div class="prendaColeccionTitulo"><?php echo($e->titulo) ?></div>
 											</div>
 											<?php
 										}
@@ -305,6 +438,10 @@
 					<a id="btnPersonalizado" href="<?php echo(base_url( 'productos/'.$genero.'/personalizado' )); ?>"><div class="btnVerMas">Ver más</div></a>
 				</div>
 			</div>
+			
+			<script type="text/javascript">
+				let overGeneros = true;
+			</script>
 		<?php
 	}
 ?>

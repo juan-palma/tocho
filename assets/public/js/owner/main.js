@@ -1606,15 +1606,97 @@ var normalize = (function() {
 
 
 
-var peegf = {};
-function controlConecciones(){
+var globAc = {};
+
+
+globAc.corte = {};
+globAc.corte.valor = "";
+function cortePut(){
+	if(globAc.corte.valor === prenda.corte[this.idaVal.num] ){ return false; }
+	if(globAc.corte.valor !== ""){
+		globAc.corte.obj.removeClass('activo');
+	}
+	
+	globAc.corte.obj = this;
+	globAc.corte.valor = prenda.corte[this.idaVal.num];
+	this.addClass('activo');
+}
+
+globAc.baseColor = {};
+globAc.baseColor.color = "";
+function colorPrenda(){
+	if(globAc.baseColor.color === this.idaVal.color ){ return false; }
+	if(globAc.baseColor.color !== ""){
+		globAc.baseColor.bnt.removeClass('activo');
+	}
+	
+	globAc.baseColor.bnt = this;
+	globAc.baseColor.color = this.idaVal.color;
+	globAc.baseColor.num = this.idaVal.num;
+	this.addClass('activo');
+	
+	var box = document.id("prendaBaseColor");
+	var imagen = prenda.color[this.idaVal.num].imagen;
+	var img = new Element('img', {'src':imagen, 'class':''});
+	box.empty();
+	if(imagen === undefined){return false;}
+	box.adopt([img]);
+	
+	
+}
+
+
+
+
+globAc.estampados = {};
+globAc.estampados.modelNum = "";
+function controlColModelo(){
+	if(globAc.estampados.modelNum === this.idaVal.modelo ){ return false; }
+	if(globAc.estampados.modelNum !== ""){
+		globAc.estampados.modelBnt.removeClass('activo');
+	}
+	
+	globAc.estampados.modelBnt = this;
+	globAc.estampados.modelNum = this.idaVal.modelo;
+	this.addClass('activo');
+	
+	
+	var box = document.id("prendaEstampado");
+	var imagen = prenda.estampados[this.idaVal.colec].modelosP[this.idaVal.modelo];
+	if(imagen === undefined){box.empty(); return false;}
+	var img = new Element('img', {'src':imagen.imagen, 'class':'blendM1'});
+	var img2 = new Element('img', {'src':imagen.imagen, 'class':'blendM2'});
+	box.empty();
+	if(imagen === undefined){return false;}
+	box.adopt([img, img2]);
+}
+
+globAc.estampados.colecNum = "";
+function controlColecciones(){
+	if(globAc.estampados.colecNum === this.idaVal.valor ){ return false; }
+	if(globAc.estampados.colecNum !== ""){
+		globAc.estampados.colecBnt.removeClass('activo');
+	}
+	
+	globAc.estampados.colecBnt = this;
+	globAc.estampados.colecNum = this.idaVal.valor;
+	globAc.estampados.modelNum = "";
+	this.addClass('activo');
+	
 	var boxModelos = document.id('valoresBoxColeccionModelos');
 	boxModelos.empty();
+	var valorNumero = this.idaVal.valor;
 	
-	prenda.estampado[this.idaVal.valor].modelos.each(function(m){
+	prenda.estampados[valorNumero].modelos.each(function(m, index){
 		var box = new Element('div', {'class':'modeloBox'});
 			var imgBox = new Element('div', {'class':'boxImgM'});
 				var img = new Element('img', {'src':m.imagen});
+				imgBox.idaVal = {};
+				imgBox.idaVal.colec = valorNumero;
+				imgBox.idaVal.modelo = index;
+				imgBox.addEvent('click', function(){
+					controlColModelo.call(this);
+				});
 				imgBox.grab(img);
 			var titulo = new Element('span', {'html':m.titulo});
 			box.adopt([imgBox, titulo]);
@@ -1622,15 +1704,143 @@ function controlConecciones(){
 	});
 }
 
+globAc.estampados.clear = "";
+function clearEstampado(){
+	//if(globAc.estampados.clear === this.idaVal.valor ){ return false; }
+	
+	if(globAc.estampados.modelNum !== ""){
+		globAc.estampados.modelBnt.removeClass('activo');
+	}
+	if(globAc.estampados.colecNum !== ""){
+		globAc.estampados.colecBnt.removeClass('activo');
+	}
+	this.addClass('activo');
+	
+	var boxModelos = document.id('valoresBoxColeccionModelos');
+	boxModelos.empty();
+	
+	var box = document.id("prendaEstampado");
+	box.empty();
+	
+	globAc.estampados.modelNum = "";
+	globAc.estampados.modelBnt = "";
+	globAc.estampados.colecNum = "sin";
+	globAc.estampados.colecBnt = this;
+	globAc.estampados.clear = this.idaVal.valor;
+}
+
+
+
+function controlNumero(){
+	var pos = $$('#prendaVFija .optionBoxMainValores select[name="ubicacion"]');
+	pos = pos[0];
+	var numero = $$('#prendaVFija .optionBoxMainValores input[name="numero"]');
+	numero = numero[0];
+	
+	if(numero.value === ""){return false;};
+	
+	var textoC = document.id('prendaNumero').getElement('.posCentro span');
+	var textoD = document.id('prendaNumero').getElement('.posDerecha span');
+	var textoI = document.id('prendaNumero').getElement('.posIzquierda span');
+	
+	textoC.empty();
+	textoD.empty();
+	textoI.empty();
+	
+	switch(pos.value){
+		case "centro":
+			textoC.set('html', numero.value);
+		break;
+		
+		case "derecha":
+			textoD.set('html', numero.value);
+		break;
+		
+		case "izquierda":
+			textoI.set('html', numero.value);
+		break;
+	}
+}
+
+
+function controlTipogra(){
+	var prendaI =  document.id('prendaI');
+	
+	prendaI.setStyle('font-family', this.value);
+}
+
+
+
+
 function activarFijosPrenda(){
-	var coleccciones = $$('#prendaVFija .optionBoxColValores .prendaBoxColeccion .prendaColeccionImg');
-	coleccciones.each(function(c, index){
+	var colecciones = $$('#prendaVFija .optionBoxColValores > .prendaBoxColeccion .btnPrendaColec');
+	colecciones.each(function(c, index){
 		c.idaVal = {};
 		c.idaVal.valor = index;
 		c.addEvent('click', function(){
-			controlConecciones.call(this);
+			controlColecciones.call(this);
 		});
 	});
+	
+	var boxClearEstampado = document.id("sinEstampado");
+	var btnClearEstampado = boxClearEstampado.getElement(".btnPrendaColec");
+	btnClearEstampado.idaVal = {};
+	btnClearEstampado.idaVal.valor = "clear";
+	btnClearEstampado.addEvent("click", function(){
+		clearEstampado.call(this);
+	});
+	
+	
+	var colores = $$('#prendaVFija .mainBoxOptionColor .optionBoxMainValores .miniBoxColor');
+	colores.each(function(c, index){
+		c.idaVal = {};
+		c.idaVal.num = index;
+		c.idaVal.color = c.getProperty("data-color");
+		c.addEvent('click', function(){
+			colorPrenda.call(this);
+		});
+		if(index === 0){colorPrenda.call(c);}
+	});
+	
+	
+	var corte = $$('#prendaVFija .mainBoxOptionCorte .optionBoxMainValores > div .optionValue');
+	corte.each(function(c, index){
+		c.idaVal = {};
+		c.idaVal.num = index;
+		c.addEvent('click', function(){
+			cortePut.call(this);
+		});
+		if(index === 0){cortePut.call(c);}
+	});
+	
+	
+	var nombre = $$('#prendaVFija .optionBoxMainValores input[name="nombre"]');
+	nombre = nombre[0];
+	nombre.addEvent('change', function(){
+		var texto = document.id('prendaNombre').getElement('.posCentro span');
+		texto.empty().set('html', this.value);
+	});
+	
+	var numero = $$('#prendaVFija .optionBoxMainValores input[name="numero"]');
+	numero = numero[0];
+	numero.addEvent('change', function(){
+		controlNumero();
+	});
+	
+	var posicion = $$('#prendaVFija .optionBoxMainValores select[name="ubicacion"]');
+	posicion = posicion[0];
+	posicion.addEvent('change', function(){
+		controlNumero();
+	});
+	
+	var tipografia = $$('#prendaVFija .optionBoxMainValores select[name="tipografia"]');
+	tipografia = tipografia[0];
+	tipografia.addEvent('change', function(){
+		controlTipogra.call(this);
+	});
+	controlTipogra.call(tipografia);
+	
+	
 }
 
 
@@ -1654,9 +1864,9 @@ function getOptionSelect(){
 	});
 	
 	console.info(datosActivos);
-	var mainImageBox = document.id('prendaI');
-	var imagen = new Element('img', {'src':datosActivos.image.src, 'alt':datosActivos.image.altText});
-	mainImageBox.empty().grab(imagen);
+	//var mainImageBox = document.id('prendaBaseColor');
+	//var imagen = new Element('img', {'src':datosActivos.image.src, 'alt':datosActivos.image.altText});
+	//mainImageBox.empty().grab(imagen);
 }
 
 function opcionesInteraccion(){
@@ -1704,6 +1914,7 @@ function colocarPrenda(j){
 				if(index === 0){ peeg[o.name].btnActivo = boxOptionValues; boxOptionValues.addClass('activo'); }
 				
 				if(o.name == "Color"){
+/*
 					var miniBoxColor = new Element('div', {'class':'miniBoxColor'});
 					var cclean = normalize(va);
 					//var nameClean = "color"
@@ -1717,11 +1928,16 @@ function colocarPrenda(j){
 					if(index === 0){ peeg[o.name].btnActivo = circuloColor; circuloColor.addClass('activo'); }
 					miniBoxColor.adopt([circuloColor, boxOptionValues]);
 					boxOptionBoxValores.grab(miniBoxColor);
+*/
+				} else if(o.name == "Tipo de Corte"){
+					
 				} else{
 					boxOptionBoxValores.grab(boxOptionValues);
 				}
 			});
-		boxOpcion.adopt([boxOptionTitulo, boxOptionBoxValores]);
+		if(o.name == "Talla"){
+			boxOpcion.adopt([boxOptionTitulo, boxOptionBoxValores]);
+		}
 		
 		mainInfoBox.grab(boxOpcion);
 	});
@@ -2145,15 +2361,7 @@ window.addEvent('domready', function(){
 				break;
 				
 				case 'productos':
-					let generos = ["Basico", "Personalizado"];
 					
-					generos.each(function(g){
-						document.id('btn'+g).addEvent('mouseover', function(){
-							document.id('over'+g).removeClass('oculto');
-						}).addEvent('mouseout', function(){
-							document.id('over'+g).addClass('oculto');
-						});
-					});
 				break;
 				
 				case 'somos':
@@ -2190,6 +2398,20 @@ window.addEvent('domready', function(){
 		if(prendaSi === true){
 			shopify(genero, valorA);
 			activarFijosPrenda();
+		}
+	}
+	
+	if(typeof overGeneros !== 'undefined'){
+		if(overGeneros === true){
+			let generos = ["Basico", "Personalizado"];
+		
+			generos.each(function(g){
+				document.id('btn'+g).addEvent('mouseover', function(){
+					document.id('over'+g).removeClass('oculto');
+				}).addEvent('mouseout', function(){
+					document.id('over'+g).addClass('oculto');
+				});
+			});
 		}
 	}
 	

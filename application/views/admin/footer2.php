@@ -19,6 +19,7 @@
 </body>
 
 
+
 <script src="<?php echo(base_url('assets/common/js/librerias/jquery.3.2.1.min.js')) ?>" type="text/javascript"></script>
 <script src="<?php echo(base_url('assets/common/js/librerias/popper.min.js')) ?>" type="text/javascript"></script>
 <script src="<?php echo(base_url('assets/common/js/librerias/bootstrap.min.js')) ?>" type="text/javascript"></script>

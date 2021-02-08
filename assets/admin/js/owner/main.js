@@ -151,7 +151,7 @@ function reconteo(seccion, extra){
 		conteos.each(function(c){
 			switch(c.getProperty('data-conteoval')){
 				case 'text':
-					c.empty().set('text', c.getProperty('data-conteovalin') + (i+1) + ' -' + textExtra + c.getProperty('data-conteovalfin'));
+					c.empty().set('text', c.getProperty('data-conteovalin') + (i+1) + ' ' + textExtra + c.getProperty('data-conteovalfin'));
 				break;
 				
 				case 'name':
@@ -228,6 +228,7 @@ function activar(copia, seccion, padre,  a){
 }
 
 function btnMas(name, box, seccion, callBack){
+	//console.info(name);
 	var clone = $$('.hiden.boxClones > [data-cloneinfo="'+name+'"]');
 	clone = clone[0].clone();
 	box.adopt([clone]);
@@ -1287,6 +1288,102 @@ function vacantes_inicio(){
 
 
 
+// Pagina Hombres
+function hombres_sudadera_inicio(){
+	//Desactivar el formulario para cobtrolar el envio
+	document.id('formulario').addEvent('submit', function(e){
+		e.preventDefault();
+		e.stop();
+		
+		validar();
+	});	
+	
+	//funciones para validar y enviar el formulario
+	//validar
+	function validar(){
+		
+		function fin(j){
+			//remplazar los input por imagenes cargadas
+			
+			var contenedor = $$('#hombres .contenedor');
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.base.prenda[0] !== 'nop' && j.valores.base.prenda[0] !== ''){
+				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.prenda[0],  'prenda', 'sudadera_color', 'base', 'hombres');
+				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+						
+		}
+		
+		function error(j){
+			
+		}
+		
+		var datos = new FormData(document.id('formulario'));
+		db_conect(window.location.pathname+'/do_upload', datos, fin, error);
+		
+	}
+	
+	
+	
+	
+	activeImgBbox('sudadera_color');
+	document.id('sudadera_color_clonemas').addEvent('click', function(){
+		btnMas('prenda', document.id('sudadera_color').getElement('.boxRepeat'), 'sudadera_color', {});
+	});
+	
+	
+	var allBTNDel = $$('#sudadera_color .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'sudadera_color');
+		});
+	});
+	
+	
+	
+/*
+	activeImgBbox('inicio');
+	document.id('inicio_clonemas').addEvent('click', function(){
+		btnMas('inicio', document.id('inicio').getElement('.boxRepeat'), 'inicio', {});
+	});
+	
+	
+	var allBTNDel = $$('#inicio .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'inicio');
+		});
+	});
+*/
+	
+	
+	
+	activeImgBbox('sudadera_estampados');
+	document.id('sudadera_estampados_clonemas').addEvent('click', function(){
+		btnMas('sudadera_estampados', document.id('sudadera_estampados').getElement('.boxRepeat'), 'sudadera_estampados', {});
+	});
+	
+	var allBTNDel = $$('#sudadera_estampados .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'sudadera_estampados');
+		});
+	});
+	
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1333,6 +1430,10 @@ window.addEvent('domready', function(){
 				
 				case 'servicios_general':
 					servicio_general_inicio();
+				break;
+				
+				case 'hombres_sudadera':
+					hombres_sudadera_inicio();
 				break;
 			}
 		}

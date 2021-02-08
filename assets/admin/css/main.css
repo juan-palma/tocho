@@ -645,7 +645,44 @@ a[href*="froala.com"]{
 	background: white;
 	margin-bottom: 2rem;
 	width: 100%;
+	overflow: hidden;
 }
+	.activeCol {
+	    display: grid;
+	    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+	    grid-template-rows: auto;
+	    grid-template-areas: "panel sombra";
+	    column-gap: 10px;
+	    row-gap: 15px;
+	}
+	.prendaSombra{
+		grid-area: sombra;
+	}
+	.gridPanel{
+		grid-area: panel;
+	}
+	
+	.box2col{
+		display: grid;
+	    grid-template-columns: auto auto;
+	    grid-template-rows: auto;
+	    column-gap: 10px;
+	    row-gap: 15px;
+	}
+		.box2col > div{
+			overflow: hidden;
+		}
+	.box4col{
+		display: grid;
+	    grid-template-columns: auto auto auto auto;
+	    grid-template-rows: auto;
+	    column-gap: 10px;
+	    row-gap: 15px;
+	}
+		.box4col > div{
+			overflow: hidden;
+		}
+	
 .registro > .contenedor{
 	padding: 0px 2rem;
 }

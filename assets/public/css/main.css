@@ -998,10 +998,108 @@ body#productos{
 		#prendaI{
 			flex: 1 1 60%;
 			max-width: 60%;
+			position: relative;
 		}
+			#prendaI .prendaSuperPuesta{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+			}
+				#prendaI .prendaSuperPuesta img.blendM1 {
+					mix-blend-mode: overlay;
+					opacity: 0.3;
+				}
+				#prendaI .prendaSuperPuesta img.blendM2 {
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					mix-blend-mode: luminosity;
+				}
 			#prendaI img{
 				width: 100%;
 			}
+			#prendaSombra{
+				position: relative;
+				mix-blend-mode: multiply;
+				opacity: 0.7;
+			}
+			
+			#prendaNombre{
+				
+			}
+				#prendaNombre .posCentro{
+					transform-style: preserve-3d;
+				    transform: rotateX(35deg) rotateY(11deg) rotatez(-11deg);
+				    position: relative;
+				    top: 7.4vw;
+				    left: 20.2vw;
+				    text-align: center;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre .posCentro span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+			#prendaNumero{
+				
+			}
+				#prendaNumero .posCentro{
+					transform-style: preserve-3d;
+				    transform: rotateX(45deg) rotateY(11deg) rotatez(-14deg);
+				    position: relative;
+				    top: 9.8vw;
+				    left: 22vw;
+				    text-align: center;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero .posCentro span{
+						font-size: 6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+					
+				#prendaNumero .posDerecha{
+					transform-style: preserve-3d;
+				    transform: rotateX(45deg) rotateY(11deg) rotatez(-14deg);
+				    position: relative;
+				    top: 9.4vw;
+				    left: 22vw;
+				    text-align: center;
+				    width: 12%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero .posDerecha span{
+						font-size: 6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+				
+				#prendaNumero .posIzquierda{
+					transform-style: preserve-3d;
+					transform: rotateX(51deg) rotateY(38deg) rotatez(-35deg);
+				    position: relative;
+				    top: 8.8vw;
+				    left: 32vw;
+				    text-align: center;
+				    width: 11%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero .posIzquierda span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
 		
 		#prendaV{
 			flex: 1 1 40%;
@@ -1052,11 +1150,12 @@ body#productos{
 				    align-items: center;
 				    text-align: center;
 				}
-					#prendaV .optionBoxMainValores .circuloColor {
+					#prendaV .optionBoxMainValores .miniBoxColor .circuloColor {
 					    width: 38px;
 					    height: 38px;
 					    border-radius: 20px;
 					    cursor: pointer;
+					    border: 0px solid #f3bf1c;
 					    
 					    -webkit-transition: all 0.2s ease-in-out;
 						-moz-transition: all 0.2s ease-in-out;
@@ -1064,9 +1163,9 @@ body#productos{
 						-ms-transition: all 0.2s ease-in-out;
 						transition: all 0.2s ease-in-out;
 					}
-					#prendaV .optionBoxMainValores .circuloColor:hover,
-					#prendaV .optionBoxMainValores .circuloColor.activo{
-						border: 5px solid burlywood;
+					#prendaV .optionBoxMainValores .miniBoxColor:hover .circuloColor,
+					#prendaV .optionBoxMainValores .miniBoxColor.activo .circuloColor{
+						border: 5px solid #f3bf1c;
 					}
 					#prendaV .optionBoxMainValores .miniBoxColor .optionValue.optionColor {
 					    border: 0px none transparent;
@@ -1076,8 +1175,8 @@ body#productos{
 					    cursor: default;
 					    font-size: 80%;
 					}
-					#prendaV .optionBoxMainValores .miniBoxColor .optionValue.optionColor:hover,
-					#prendaV .optionBoxMainValores .miniBoxColor .optionValue.optionColor.activo{
+					#prendaV .optionBoxMainValores .miniBoxColor:hover .optionValue.optionColor,
+					#prendaV .optionBoxMainValores .miniBoxColor.activo .optionValue.optionColor{
 						color: #000;
 						background-color: transparent;
 					}
@@ -1094,13 +1193,33 @@ body#productos{
 						    align-items: center;
 						    padding: 6px;
 						}
-							#prendaV .optionBoxColValores .prendaColeccionImg {
-							    width: 42px;
-							    height: 42px;
-							    border-radius: 20px;
-							    margin-right: 10px;
+							#prendaV .optionBoxColValores .prendaBoxColeccion .btnPrendaColec {
+							    display: flex;
+							    align-items: center;
 							    cursor: pointer;
+							    border-left: 0px solid #f3bf1c;
+							    padding-left: 0px;
+							    
+							    -webkit-transition: all 0.2s ease-in-out;
+								-moz-transition: all 0.2s ease-in-out;
+								-o-transition: all 0.2s ease-in-out;
+								-ms-transition: all 0.2s ease-in-out;
+								transition: all 0.2s ease-in-out;
 							}
+							#prendaV .optionBoxColValores .prendaBoxColeccion .btnPrendaColec.activo,
+							#prendaV .optionBoxColValores .prendaBoxColeccion .btnPrendaColec:hover{
+							    font-weight: bold;
+							    border-left: 12px solid #f3bf1c;
+							    padding-left: 10px;
+							}
+								#prendaV .optionBoxColValores .prendaColeccionImg {
+								    width: 42px;
+								    height: 42px;
+								    border-radius: 20px;
+								    margin-right: 10px;
+								    cursor: pointer;
+								    background-size: cover;
+								}
 						#valoresBoxColeccionModelos {
 						    min-height: 94px;
 						    display: flex;
@@ -1119,6 +1238,18 @@ body#productos{
 								    height: 86px;
 								    overflow: hidden;
 								    border-radius: 48px;
+								    cursor: pointer;
+								    border: 0px solid #f3bf1c;
+								    
+								    -webkit-transition: all 0.2s ease-in-out;
+									-moz-transition: all 0.2s ease-in-out;
+									-o-transition: all 0.2s ease-in-out;
+									-ms-transition: all 0.2s ease-in-out;
+									transition: all 0.2s ease-in-out;
+								}
+								.modeloBox .boxImgM.activo,
+								.modeloBox .boxImgM:hover{
+									border: 6px solid #f3bf1c;
 								}
 					#prendaV .mainBoxOptionCol {
 					    display: grid;
@@ -1555,7 +1686,7 @@ body#productos{
 		height: auto;
 		background: transparent url(../img/home_sec4_footer_fondo.png);
 		background-size: cover;
-		margin-top: -14vw;
+		margin-top: calc(-16vh - 1vw);
 	}
 		#footer.mainbox div#box_footer_sec1 {
 		    padding: 14vw 3rem 3rem;
