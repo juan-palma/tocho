@@ -190,7 +190,8 @@ function activeImgBbox(seccion){
 }
 
 function removeInputIMG(bloque, cleanBox, clone, imagen, tipo, seccion, item, carpeta){
-	var box = bloque.getElement(cleanBox);
+/*
+	var box = bloque.getElement('.cleanBox[data-clonetype="'+clone+'"]');
 	box.empty();
 	
 	var clone = $$('.hiden.boxClones > [data-cloneinfo="'+clone+'"]');
@@ -213,6 +214,7 @@ function removeInputIMG(bloque, cleanBox, clone, imagen, tipo, seccion, item, ca
 	});
 	
 	box.grab(clone);
+*/
 }
 
 
@@ -666,292 +668,11 @@ function general_inicio(){
 
 
 
-// Pagina Portafolios
-function portafolios_inicio(){
-	//Desactivar el formulario para cobtrolar el envio
-	document.id('formulario').addEvent('submit', function(e){
-		e.preventDefault();
-		e.stop();
-		
-		validar();
-	});	
-	
-	
-	
-	//funciones para validar y enviar el formulario
-	//validar
-	function validar(){
-		
-		function fin(j){
-			//Colocar el ID del. nuevo registro en el Hiden para que se pueda actualizar el mismo registro
-			if(document.id('idRegistro').value === ''){
-				document.id('idRegistro').value = j.valores.registro.id;
-			}
-			
-			var contenedor = $$('#portafolios .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
-			if(j.valores.base.titulo_fondo[0] !== 'nop' && j.valores.base.titulo_fondo[0] !== ''){
-				removeInputIMG(contenedor[0], '.titulo_fondo.cleanBox', 'imgBlock', j.valores.base.titulo_fondo[0],  'titulo_fondo', 'portafolios', 'base', 'portafolios/registros');
-				var hiden = $$('.titulo_fondo.cleanBox input[type="hidden"]');
-				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
-			}
-			
-			
-			//remplazar los input por imagenes cargadas en Registros Bloques
-			var secciones = $$('#portafolios .registro');
-			secciones.each(function(s, i){
-				if(j.valores.bloque.imagen[i] !== 'nop' && j.valores.bloque.imagen[i] !== ''){
-					removeInputIMG(s, '.bloque_imagen .cleanBox', 'imgBlock', j.valores.bloque.imagen[i],  'imagen', 'portafolios', 'bloque', 'portafolios/registros');
-				}
-			});
-			reconteo('#portafolios .registro', []);
-						
-						
-			
-			//remplazar los input por imagenes cargadas en Clientes
-			var secciones = $$('#galeria .registro');
-			secciones.each(function(s, i){
-				if(j.valores.galeria.foto[i] !== 'nop' && j.valores.galeria.foto[i] !== ''){
-					removeInputIMG(s, '.galeria_foto.cleanBox', 'imgBlock', j.valores.galeria.foto[i],  'foto', 'galeria', 'foto', 'portafolios/registros');
-				}
-			});
-			reconteo('#galeria .registro', []);
-			
-			
-		}
-		
-		function error(j){
-			
-		}
-		
-		var texts = $$('#portafolios textarea');
-		texts.each(function(t){
-			var valor = t.value;
-			t.value = valor.replace(/\"/gi, '\'');
-		});
-			
-		var datos = new FormData(document.id('formulario'));
-		db_conect(baseDir+'/admin/portafolios/do_upload', datos, fin, error);
-		
-	}
-	
-	
-	
-	
-		
-	
-// 	Codigo para iniciar la seccion PORTAFOLIOS	
-	activeImgBbox('portafolios');
-	document.id('bloque_clonemas').addEvent('click', function(){
-		btnMas('formRegistro', document.id('portafolios').getElement('.boxRepeat'), 'portafolios', {});
-	});
-
-	var allBTNDel = $$('#portafolios .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'portafolios');
-		});
-	});
-	
-
-
-
-
-// 	Codigo para iniciar la seccion CLIENTES	
-	activeImgBbox('galeria');
-	document.id('galeria_clonemas').addEvent('click', function(){
-		btnMas('foto', document.id('galeria').getElement('.boxRepeat'), 'galeria', {});
-	});
-	
-	var allBTNDel = $$('#galeria .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'galeria');
-		});
-	});
-
-
-		
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Pagina servicios
-function servicios_inicio(){
-	//Desactivar el formulario para cobtrolar el envio
-	document.id('formulario').addEvent('submit', function(e){
-		e.preventDefault();
-		e.stop();
-		
-		validar();
-	});	
-	
-	
-	
-	//funciones para validar y enviar el formulario
-	//validar
-	function validar(){
-		
-		function fin(j){
-			//Colocar el ID del. nuevo registro en el Hiden para que se pueda actualizar el mismo registro
-			if(document.id('idRegistro').value === ''){
-				document.id('idRegistro').value = j.valores.registro.id;
-			}
-			
-			
-			var contenedor = $$('#servicios .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
-/*
-			if(j.valores.base.titulo_fondo[0] !== 'nop' && j.valores.base.titulo_fondo[0] !== ''){
-				removeInputIMG(contenedor[0], '.titulo_fondo.cleanBox', 'imgBlock', j.valores.base.titulo_fondo[0],  'titulo_fondo', 'servicios', 'base', 'servicios/registros');
-				var hiden = $$('.titulo_fondo.cleanBox input[type="hidden"]');
-				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
-			}
-*/
-			
-/*
-			var contenedor = $$('#servicios .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
-			if(j.valores.base.video_portada[0] !== 'nop' && j.valores.base.video_portada[0] !== ''){
-				removeInputIMG(contenedor[0], '.video_portada.cleanBox', 'imgBlock', j.valores.base.video_portada[0],  'video_portada', 'servicios', 'base', 'servicios/registros');
-				var hiden = $$('.video_portada.cleanBox input[type="hidden"]');
-				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
-			}
-*/
-			
-			
-			//remplazar los input por imagenes cargadas en Registros Bloques
-/*
-			var secciones = $$('#servicios .registro');
-			secciones.each(function(s, i){
-				if(j.valores.bloque.imagen[i] !== 'nop' && j.valores.bloque.imagen[i] !== ''){
-					removeInputIMG(s, '.bloque_imagen .cleanBox', 'imgBlock', j.valores.bloque.imagen[i],  'imagen', 'servicios', 'bloque', 'servicios/registros');
-				}
-			});
-
-			reconteo('#servicios .registro', []);
-*/			
-			
-			//remplazar los input por imagenes cargadas en Galeria
-			var secciones = $$('#galeria .registro');
-			secciones.each(function(s, i){
-				if(j.valores.galeria.foto[i] !== 'nop' && j.valores.galeria.foto[i] !== ''){
-					removeInputIMG(s, '.galeria_foto.cleanBox', 'imgBlock', j.valores.galeria.foto[i],  'foto', 'servicios', 'galeria', 'servicios/registros');
-				}
-			});
-			reconteo('#galeria .registro', []);
-			
-			
-			//remplazar los input por imagenes cargadas en Galeria Titulo
-			var secciones = $$('#galeriaT .registro');
-			secciones.each(function(s, i){
-				if(j.valores.galeriaT.fotoT[i] !== 'nop' && j.valores.galeriaT.fotoT[i] !== ''){
-					removeInputIMG(s, '.galeriaT_fotoT.cleanBox', 'imgBlock', j.valores.galeriaT.fotoT[i],  'fotoT', 'servicios', 'galeriaT', 'servicios/registros');
-				}
-			});
-			reconteo('#galeriaT .registro', []);
-			
-		}
-		
-		function error(j){
-			
-		}
-		
-		var texts = $$('#servicios textarea');
-		texts.each(function(t){
-			var valor = t.value;
-			t.value = valor.replace(/\"/gi, '\'');
-		});
-			
-		var datos = new FormData(document.id('formulario'));
-		db_conect(baseDir+'/admin/servicios/do_upload', datos, fin, error);
-		
-	}
-	
-	
-	
-	
-		
-	
-// 	Codigo para iniciar la seccion servicios
-	activeImgBbox('servicios');
-	document.id('bloque_clonemas').addEvent('click', function(){
-		btnMas('formRegistro', document.id('servicios').getElement('.boxRepeat'), 'servicios', {});
-	});
-
-	var allBTNDel = $$('#servicios .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'servicios');
-		});
-	});
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion Galeria Titulo
-	activeImgBbox('galeriaT');
-	document.id('galeriaT_clonemas').addEvent('click', function(){
-		btnMas('fotoT', document.id('galeriaT').getElement('.boxRepeat'), 'galeriaT', {});
-	});
-	
-	var allBTNDel = $$('#galeriaT .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'galeriaT');
-		});
-	});
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion Galeria	
-	activeImgBbox('galeria');
-	document.id('galeria_clonemas').addEvent('click', function(){
-		btnMas('foto', document.id('galeria').getElement('.boxRepeat'), 'galeria', {});
-	});
-	
-	var allBTNDel = $$('#galeria .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'galeria');
-		});
-	});
-	
-	
-
-
-}
-
-
-
-
-
-
 
 
 
 // Pagina SOMOS
+/*
 function somos(){
 	console.info('se ejecutoa servicio general');
 	//Desactivar el formulario para cobtrolar el envio
@@ -991,7 +712,7 @@ function somos(){
 				}
 			});
 			reconteo('#servicios_g .registro', []);
-*/
+*
 			
 		}
 		
@@ -1028,253 +749,9 @@ function somos(){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-// Pagina Portafolios General
-function portafolio_general_inicio(){
-	console.info('se ejecutoa portafolio general');
-	//Desactivar el formulario para cobtrolar el envio
-	document.id('formulario').addEvent('submit', function(e){
-		e.preventDefault();
-		e.stop();
-		
-		validar();
-	});	
-	
-	
-	
-	//funciones para validar y enviar el formulario
-	//validar
-	function validar(){
-		
-		function fin(j){
-			//remplazar los input por imagenes cargadas en vacantes
-			
-			var contenedor = $$('#portafolios_g .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
-			if(j.valores.base.fondo_titulo[0] !== 'nop' && j.valores.base.fondo_titulo[0] !== ''){
-				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.fondo_titulo[0],  'fondo_titulo', 'portafolio', 'base', 'portafolios');
-				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
-				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
-			}
-			
-			
-			var secciones = $$('#portafolios_g .registro');
-			secciones.each(function(s, i){
-				if(j.valores.portafolio.foto[i] !== 'nop' && j.valores.portafolio.foto[i] !== ''){
-					removeInputIMG(s, '.portafolio_foto .cleanBox', 'imgBlock', j.valores.portafolio.foto[i],  'foto', 'portafolios', 'portafolio', 'portafolios');
-				}
-			});
-			reconteo('#portafolios_g .registro', []);
-			
-		}
-		
-		function error(j){
-			
-		}
-		
-		var datos = new FormData(document.id('formulario'));
-		db_conect(window.location.pathname+'/do_upload', datos, fin, error);
-		
-	}
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion  portafolio general
-	activeImgBbox('portafolios_g');
-	document.id('portafolio_clonemas').addEvent('click', function(){
-		btnMas('formPortafolio', document.id('portafolios_g').getElement('.boxRepeat'), 'portafolios_g', {});
-	});
-	
-	var allBTNDel = $$('#portafolios_g .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'portafolios');
-		});
-	});
-	
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// Pagina servicios General
-function servicio_general_inicio(){
-	console.info('se ejecutoa servicio general');
-	//Desactivar el formulario para cobtrolar el envio
-	document.id('formulario').addEvent('submit', function(e){
-		e.preventDefault();
-		e.stop();
-		
-		validar();
-	});	
-	
-	
-	
-	//funciones para validar y enviar el formulario
-	//validar
-	function validar(){
-		
-		function fin(j){
-			//remplazar los input por imagenes cargadas en vacantes
-			
-			var contenedor = $$('#servicios_g .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
-			if(j.valores.base.fondo_titulo[0] !== 'nop' && j.valores.base.fondo_titulo[0] !== ''){
-				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.fondo_titulo[0],  'fondo_titulo', 'servicio', 'base', 'servicios');
-				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
-				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
-			}
-			
-			
-			var secciones = $$('#servicios_g .registro');
-			secciones.each(function(s, i){
-				if(j.valores.servicio.foto[i] !== 'nop' && j.valores.servicio.foto[i] !== ''){
-					removeInputIMG(s, '.servicio_foto .cleanBox', 'imgBlock', j.valores.servicio.foto[i],  'foto', 'servicios', 'servicio', 'servicios');
-				}
-				if(j.valores.servicio.icono[i] !== 'nop' && j.valores.servicio.icono[i] !== ''){
-					removeInputIMG(s, '.servicio_icono .cleanBox', 'imgBlock', j.valores.servicio.icono[i],  'icono', 'servicios', 'servicio', 'servicios');
-				}
-			});
-			reconteo('#servicios_g .registro', []);
-			
-		}
-		
-		function error(j){
-			
-		}
-		
-		var datos = new FormData(document.id('formulario'));
-		db_conect(window.location.pathname+'/do_upload', datos, fin, error);
-		
-	}
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion  servicio general
-	activeImgBbox('servicios_g');
-	document.id('servicio_clonemas').addEvent('click', function(){
-		btnMas('formServicio', document.id('servicios_g').getElement('.boxRepeat'), 'servicios_g', {});
-	});
-	
-	var allBTNDel = $$('#servicios_g .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'servicios');
-		});
-	});
-	
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Pagina Vacantes
-/*
-function vacantes_inicio(){
-	//Desactivar el formulario para cobtrolar el envio
-	document.id('formulario').addEvent('submit', function(e){
-		e.preventDefault();
-		e.stop();
-		
-		validar();
-	});	
-	
-	
-	
-	//funciones para validar y enviar el formulario
-	//validar
-	function validar(){
-		
-		function fin(j){
-			//remplazar los input por imagenes cargadas en vacantes
-			
-			var contenedor = $$('#vacantes .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
-			if(j.valores.base.video_portada[0] !== 'nop' && j.valores.base.video_portada[0] !== ''){
-				removeInputIMG(contenedor[0], '.video_portada.cleanBox', 'imgBlock', j.valores.base.video_portada[0],  'video_portada', 'servicios', 'base', 'vacantes');
-				var hiden = $$('.video_portada.cleanBox input[type="hidden"]');
-				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
-			}
-			
-			
-			var secciones = $$('#vacantes .registro');
-			secciones.each(function(s, i){
-				if(j.valores.vacante.foto[i] !== 'nop' && j.valores.vacante.foto[i] !== ''){
-					removeInputIMG(s, '.vacante_foto .cleanBox', 'imgBlock', j.valores.vacante.foto[i],  'foto', 'vacantes', 'vacante', 'vacantes');
-				}
-			});
-			reconteo('#vacantes .registro', []);
-			
-		}
-		
-		function error(j){
-			
-		}
-		
-		var datos = new FormData(document.id('formulario'));
-		db_conect(window.location.pathname+'/do_upload', datos, fin, error);
-		
-	}
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion vacantes
-	activeImgBbox('vacantes');
-	document.id('vacante_clonemas').addEvent('click', function(){
-		btnMas('formvacante', document.id('vacantes').getElement('.boxRepeat'), 'vacantes', {});
-	});
-	
-	var allBTNDel = $$('#vacantes .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'vacantes');
-		});
-	});
-	
-
-
-}
 */
+
+
 
 
 
@@ -1305,13 +782,22 @@ function hombres_sudadera_inicio(){
 		function fin(j){
 			//remplazar los input por imagenes cargadas
 			
-			var contenedor = $$('#hombres .contenedor');
-			//remplazar los input por imagenes cargadas el fondo de los registros
+/*
+			if(j.valores.sudadera_color.prenda.length > 0){
+				removeInputIMG(document.id('sudadera_color'), '.sombra', 'imgBlock', j.valores.sudadera_color.prenda[0],  'prenda', 'sudadera_color', 'base', 'hombres');
+				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+*/
+			
+			
+/*
 			if(j.valores.base.prenda[0] !== 'nop' && j.valores.base.prenda[0] !== ''){
 				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.prenda[0],  'prenda', 'sudadera_color', 'base', 'hombres');
 				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
 				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
 			}
+*/
 						
 		}
 		
@@ -1408,28 +894,6 @@ window.addEvent('domready', function(){
 				
 				case 'general':
 					general_inicio();
-				break;
-				
-				case 'somos':
-					somos();
-				break;
-				
-				case 'registro_portafolios':
-					portafolios_inicio();
-					runListaReg('portafolios');
-				break;
-				
-				case 'registro_servicios':
-					servicios_inicio();
-					runListaReg('servicios');
-				break;
-				
-				case 'portafolios_general':
-					portafolio_general_inicio();
-				break;
-				
-				case 'servicios_general':
-					servicio_general_inicio();
 				break;
 				
 				case 'hombres_sudadera':

@@ -16,8 +16,8 @@
 <!-- 		<link rel="icon" href="favicon.ico?v1" /> -->
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 				
-		<title><?php echo($titulo); ?> | Sistema AMEX - GAM</title>
-		<meta name="description" content="Sistema AMEX - GAM | Sistema de administración, control y seguimiento de la información" />
+		<title><?php echo($titulo); ?> | IDA Sistema ADMIN</title>
+		<meta name="description" content="IDA Sistema ADMIN | Sistema de administración, control y seguimiento de la información" />
 
 					
 		<meta name="dcterms.audience" content="Global" />

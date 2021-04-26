@@ -14,6 +14,71 @@
 	<div class="hiden boxClones">
 		
 		
+		<?php $baseName = "sudadera_color"; $fotoName = "sombra"; ?>
+		<div data-cloneinfo="<?php echo($fotoName); ?>">
+		<?php
+			$data_input_hidden  =  array ( 
+				'name' => "sectores[$baseName][imgs][$fotoName][falso]",
+				'type' => 'hidden',
+				'class' => 'conteo',
+				'data-conteovalin' => "sectores[$baseName][imgs][$fotoName]",
+				'data-conteovalfin' => "[falso]",
+				'data-conteoval' => "name"
+			);
+			$data_input =  array ( 
+				'name' => "sectores_".$baseName."_imgs_".$fotoName,
+				'value' => '',
+				'class' => 'validaciones vc form-control input-lg conteo',
+				'autocomplete' => 'off',
+				'placeholder' => '',
+				'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName,
+				'data-conteovalfin' => "",
+				'data-conteoval' => "name"
+			);
+		?>
+		<?php
+			echo form_input( $data_input_hidden );
+			echo form_upload( $data_input );
+		?>
+		</div>
+		
+<!--
+		<?php $baseName = "sudadera_color_sombra"; $fotoName = "sombra"; ?>
+		<div id="<?php echo($baseName); ?>_base" class="registro" data-cloneinfo="<?php echo($fotoName); ?>">
+			<div class="">
+				<?php
+					$data_input_hidden  =  array ( 
+						'type' => 'hidden',
+						'class' => 'conteo',
+						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
+						'data-conteovalfin' => "][falso]",
+						'data-conteoval' => "name"
+					);
+					$data_input =  array ( 
+						'name' => '',
+						'value' => '',
+						'class' => 'validaciones vc form-control input-lg conteo',
+						'autocomplete' => 'off',
+						'placeholder' => '',
+						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
+						'data-conteovalfin' => "",
+						'data-conteoval' => "name"
+					);
+				?>
+				<div class="bloque_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<?php
+						echo form_input( $data_input_hidden );
+						echo form_upload( $data_input );
+					?>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+-->
+				
+		
 		<?php $baseName = "sudadera_color"; $fotoName = "prenda"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($fotoName); ?>">
 			<div class="valHead">
@@ -791,10 +856,22 @@
 						?>
 						<div class="bloque_imagen">
 							<label>Sombra de prenda:</label>
-							<div class="cleanBox">
+<!-- 							<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen"> -->
+							<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>">
 							<?php
 								if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-									$v = $vDB->imgs->{$fotoName};
+									$v = "";
+									
+									if($vDB->imgs->{$fotoName} !== ""){
+										$v = $vDB->imgs->{$fotoName};
+									}
+									if(is_array($vDB->imgs->{$fotoName})){
+										if( count($vDB->imgs->{$fotoName}) > 0 ){
+											$v = $vDB->imgs->{$fotoName}[0];
+										} else{
+											$v = "";
+										}
+									}
 									
 									if($v !== ""){
 										$data = [];

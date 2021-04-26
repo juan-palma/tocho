@@ -94,6 +94,7 @@ class Hombres_sudadera extends CI_Controller {
 								$result = $this->upload->data();
 								$rutaImagenes[$i] = $result['file_name'];
 								$this->valores[$s]['imgs'][$n][$i] = $result['file_name'];
+								$this->valores[$s][$n][$i] = $result['file_name'];
 							}
 						}
 					}
@@ -116,6 +117,7 @@ class Hombres_sudadera extends CI_Controller {
 							$result = $this->upload->data();
 							$rutaImagenes = $result['file_name'];
 							$this->valores[$s]['imgs'][$n] = $result['file_name'];
+							$this->valores[$s][$n][] = $result['file_name'];
 						}
 					}
 				}
