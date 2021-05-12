@@ -1000,6 +1000,47 @@ body#productos{
 			max-width: 60%;
 			position: relative;
 		}
+			#prendaVistas{
+				position: relative;
+				z-index: 600;
+				width: 100%;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    padding: 4rem;
+			    font-family: sans-serif;
+			    font-weight: bold;
+			    text-transform: uppercase;
+			    font-size: 2vw;
+			}
+				div#prendaVistas > div {
+				    padding: 6px 1rem;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    background-color: black;
+				    color: orange;
+				    border-radius: 6px;
+				    margin: 0px 10px;
+				    cursor: pointer;
+				    
+				    -webkit-transition: all 0.4s ease-in-out;
+					-moz-transition: all 0.4s ease-in-out;
+					-o-transition: all 0.4s ease-in-out;
+					-ms-transition: all 0.4s ease-in-out;
+					transition: all 0.4s ease-in-out;
+				}
+				div#prendaVistas > div:hover,
+				div#prendaVistas > div.activo{
+					background-color: orange;
+					color: black;
+				}
+				
+			.boxAllEffect{
+				display: flex;
+				position: relative;
+			}
+			
 			#prendaI .prendaSuperPuesta{
 				position: absolute;
 				top: 0px;

@@ -1,10 +1,21 @@
 <?php
 	$prenda = new stdClass;
-	$prenda->estampados = [];
 	
-	//print_r($sudadera_generalDB);
-	//print_r($sudadera_colorDB);
-	//print_r($sudadera_estampadosDB);
+	if(isset($sudadera_generalDB)){
+		if(property_exists($sudadera_generalDB, 'sudadera_tipo_corte')){
+			$prenda->corte = [];
+			//$prenda->corte[] = "Fit";
+			$cortes = explode(",", $sudadera_generalDB->sudadera_tipo_corte);
+			foreach ($cortes as $i=>$v) {
+				$prenda->corte[] = trim($v);
+			}
+		}
+	}
+	
+	
+	
+	
+	$prenda->estampados = [];
 	
 	if(isset($sudadera_estampadosDB)){
 		if(property_exists($sudadera_estampadosDB, 'portada')){
@@ -86,22 +97,97 @@
 	
 	
 	
-	if(isset($sudadera_generalDB)){
-		if(property_exists($sudadera_generalDB, 'sudadera_tipo_corte')){
-			$prenda->corte = [];
-			//$prenda->corte[] = "Fit";
-			$cortes = explode(",", $sudadera_generalDB->sudadera_tipo_corte);
-			foreach ($cortes as $i=>$v) {
-				$prenda->corte[] = trim($v);
+	if(isset($sudadera_lateral_estampadosDB)){
+		//print_r($sudadera_lateral_estampadosDB);
+		if(property_exists($sudadera_lateral_estampadosDB, 'model1p_lateral')){
+			foreach ($sudadera_lateral_estampadosDB->model1p_lateral->clone as $i=>$v) {
+				$estampados = new stdClass;
+				//$estampados->titulo = $v->sudadera_lateral_estampado_name;
+				//$estampados->imagen = "imagen";
+				
+				$val = "";
+				
+				$estampados->modelosP = [];
+					for ($im = 1; $im <= 4; $im++) {
+					    $modelosP = new stdClass;
+						$modelosP->titulo = "Prenda del Modelo ".$im;
+						$val = "";
+						$fotoName = "model".$im."p_lateral";
+						if(is_object($sudadera_lateral_estampadosDB->imgs->{$fotoName})){
+							$num = strval($i+1);
+							if(isset($sudadera_lateral_estampadosDB->imgs->{$fotoName}->{$num})){
+								$val = $sudadera_lateral_estampadosDB->imgs->{$fotoName}->{$num};
+							}
+						}
+						if(is_array($sudadera_lateral_estampadosDB->imgs->{$fotoName})){
+							if(isset($sudadera_lateral_estampadosDB->imgs->{$fotoName}[(int)$i])){
+								$val = $sudadera_lateral_estampadosDB->imgs->{$fotoName}[(int)$i];
+							}
+						}
+						if($val !== ""){
+							$modelosP->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'_lateral/estampado/'.$val );
+							$estampados->modelosP[] = $modelosP;
+						}
+						
+					}
+					
+					
+				$prenda->estampados_lateral[] = $estampados;
+				//print_r($prenda->estampados_lateral);
 			}
 		}
 	}
 	
 	
 	
+	if(isset($sudadera_espalda_estampadosDB)){
+		//print_r($sudadera_lateral_estampadosDB);
+		if(property_exists($sudadera_espalda_estampadosDB, 'model1p_espalda')){
+			foreach ($sudadera_espalda_estampadosDB->model1p_espalda->clone as $i=>$v) {
+				$estampados = new stdClass;
+				//$estampados->titulo = $v->sudadera_lateral_estampado_name;
+				//$estampados->imagen = "imagen";
+				
+				$val = "";
+				
+				$estampados->modelosP = [];
+					for ($im = 1; $im <= 4; $im++) {
+					    $modelosP = new stdClass;
+						$modelosP->titulo = "Prenda del Modelo ".$im;
+						$val = "";
+						$fotoName = "model".$im."p_espalda";
+						if(is_object($sudadera_espalda_estampadosDB->imgs->{$fotoName})){
+							$num = strval($i+1);
+							if(isset($sudadera_espalda_estampadosDB->imgs->{$fotoName}->{$num})){
+								$val = $sudadera_espalda_estampadosDB->imgs->{$fotoName}->{$num};
+							}
+						}
+						if(is_array($sudadera_espalda_estampadosDB->imgs->{$fotoName})){
+							if(isset($sudadera_espalda_estampadosDB->imgs->{$fotoName}[(int)$i])){
+								$val = $sudadera_espalda_estampadosDB->imgs->{$fotoName}[(int)$i];
+							}
+						}
+						if($val !== ""){
+							$modelosP->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'_espalda/estampado/'.$val );
+							$estampados->modelosP[] = $modelosP;
+						}
+						
+					}
+					
+					
+				$prenda->estampados_espalda[] = $estampados;
+				//print_r($prenda->estampados_espalda);
+			}
+		}
+	}
+	
+	
+	
+	
+	
 	if(isset($sudadera_colorDB)){
 		if(property_exists($sudadera_colorDB, 'prenda')){
-			$prenda->sombra = $sudadera_colorDB->imgs->sombra;
+			$prenda->sombra = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/color/'.$sudadera_colorDB->imgs->sombra );//$sudadera_colorDB->imgs->sombra;
 			$prenda->color = [];
 			//$prenda->color[] = "Equipo 1";
 			foreach ($sudadera_colorDB->prenda->clone as $i=>$v) {
@@ -111,6 +197,40 @@
 				$prendacolor->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/color/'.$sudadera_colorDB->imgs->prenda[$i] );
 				
 				$prenda->color[] = $prendacolor;
+			}
+		}
+	}
+	
+	
+	if(isset($sudadera_lateral_colorDB)){
+		//print_r($sudadera_lateral_colorDB);
+		if(property_exists($sudadera_lateral_colorDB, 'prenda_lateral')){
+			$prenda->sombra_lateral = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'_lateral/color/'.$sudadera_lateral_colorDB->imgs->sombra_lateral );//$sudadera_lateral_colorDB->imgs->sombra_lateral;
+			$prenda->color_lateral = [];
+			foreach ($sudadera_lateral_colorDB->prenda_lateral->clone as $i=>$v) {
+				$prendacolor = new stdClass;
+				$prendacolor->nombre = $v->sudadera_lateral_color_name;
+				$prendacolor->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'_lateral/color/'.$sudadera_lateral_colorDB->imgs->prenda_lateral[$i] );
+				
+				$prenda->color_lateral[] = $prendacolor;
+			}
+			//print_r($prenda->color_lateral);
+		}
+	}
+	
+	
+	if(isset($sudadera_espalda_colorDB)){
+		//print_r($sudadera_espalda_colorDB);
+		if(property_exists($sudadera_espalda_colorDB, 'prenda_espalda')){
+			$prenda->sombra_espalda = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'_espalda/color/'.$sudadera_espalda_colorDB->imgs->sombra_espalda );//$sudadera_espalda_colorDB->imgs->sombra_espalda;
+			$prenda->color_espalda = [];
+			//$prenda->color[] = "Equipo 1";
+			foreach ($sudadera_espalda_colorDB->prenda_espalda->clone as $i=>$v) {
+				$prendacolor = new stdClass;
+				$prendacolor->nombre = $v->sudadera_espalda_color_name;
+				$prendacolor->imagen = base_url( 'assets/public/img/'.$genero.'/'.$valorA.'_espalda/color/'.$sudadera_espalda_colorDB->imgs->prenda_espalda[$i] );
+				
+				$prenda->color_espalda[] = $prendacolor;
 			}
 		}
 	}
@@ -180,39 +300,48 @@
 				
 				<div class="mainbox bl3 bl3pi">
 					<div id="prendaI">
-						<div id="prendaBaseColor" class="prendaSuperPuesta">
- 							
+						<div id="prendaVistas">
+							<div id="vistaFrente">Frente</div>
+							<div id="vistaLateral">Lateral</div>
+							<div id="vistaEspalda">Espalda</div>
 						</div>
 						
-						<div id="prendaEstampado" class="prendaSuperPuesta">
+						<div class="boxAllEffect">
+							<div id="prendaBaseColor" class="prendaSuperPuesta">
+	 							
+							</div>
 							
-						</div>
-						
-						<div id="prendaLogo" class="prendaSuperPuesta">
+							<div id="prendaEstampado" class="prendaSuperPuesta">
+								
+							</div>
 							
+							<div id="prendaLogo" class="prendaSuperPuesta">
+								
+							</div>
+							
+							<div id="prendaNumero" class="prendaSuperPuesta">
+								<div class="posCentro">
+									<span></span>
+								</div>
+								<div class="posDerecha">
+									<span></span>
+								</div>
+								<div class="posIzquierda">
+									<span></span>
+								</div>
+							</div>
+							
+							<div id="prendaNombre" class="prendaSuperPuesta">
+								<div class="posCentro">
+									<span></span>
+								</div>
+							</div>
+							
+							<div id="prendaSombra" class="">
+								<img src="<?php echo($prenda->sombra ); ?>" />
+							</div>
 						</div>
 						
-						<div id="prendaNumero" class="prendaSuperPuesta">
-							<div class="posCentro">
-								<span></span>
-							</div>
-							<div class="posDerecha">
-								<span></span>
-							</div>
-							<div class="posIzquierda">
-								<span></span>
-							</div>
-						</div>
-						
-						<div id="prendaNombre" class="prendaSuperPuesta">
-							<div class="posCentro">
-								<span></span>
-							</div>
-						</div>
-						
-						<div id="prendaSombra" class="">
-							<img src="<?php echo(base_url( 'assets/public/img/'.$genero.'/'.$valorA.'/color/'.$prenda->sombra )); ?>" />
-						</div>
 					</div>
 					
 					<div id="prendaV">

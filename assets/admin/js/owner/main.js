@@ -230,7 +230,7 @@ function activar(copia, seccion, padre,  a){
 }
 
 function btnMas(name, box, seccion, callBack){
-	//console.info(name);
+	console.info(name);
 	var clone = $$('.hiden.boxClones > [data-cloneinfo="'+name+'"]');
 	clone = clone[0].clone();
 	box.adopt([clone]);
@@ -859,6 +859,88 @@ function hombres_sudadera_inicio(){
 			btnMenos.call(b, 'sudadera_estampados');
 		});
 	});
+	
+	
+	
+	
+	
+	
+/*
+	--------------------------------------------------------------
+	::::: Para la vista de LATERAL :::::
+	--------------------------------------------------------------
+*/
+	activeImgBbox('sudadera_lateral_color');
+	document.id('sudadera_lateral_color_clonemas').addEvent('click', function(){
+		btnMas('prenda_lateral', document.id('sudadera_lateral_color').getElement('.boxRepeat'), 'sudadera_lateral_color', {});
+	});
+	
+	
+	var allBTNDel = $$('#sudadera_lateral_color .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'sudadera_lateral_color');
+		});
+	});
+	
+	
+	
+	activeImgBbox('sudadera_lateral_estampados');
+	document.id('sudadera_lateral_estampados_clonemas').addEvent('click', function(){
+		btnMas('sudadera_lateral_estampados', document.id('sudadera_lateral_estampados').getElement('.boxRepeat'), 'sudadera_lateral_estampados', {});
+	});
+	
+	var allBTNDel = $$('#sudadera_lateral_estampados .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'sudadera_lateral_estampados');
+		});
+	});
+	
+	
+	
+	
+
+
+
+/*
+	--------------------------------------------------------------
+	::::: Para la vista de ESPALDA :::::
+	--------------------------------------------------------------
+*/
+	activeImgBbox('sudadera_espalda_color');
+	document.id('sudadera_espalda_color_clonemas').addEvent('click', function(){
+		btnMas('prenda_espalda', document.id('sudadera_espalda_color').getElement('.boxRepeat'), 'sudadera_espalda_color', {});
+	});
+	
+	
+	var allBTNDel = $$('#sudadera_espalda_color .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'sudadera_espalda_color');
+		});
+	});
+	
+	
+	
+	activeImgBbox('sudadera_espalda_estampados');
+	document.id('sudadera_espalda_estampados_clonemas').addEvent('click', function(){
+		btnMas('sudadera_espalda_estampados', document.id('sudadera_espalda_estampados').getElement('.boxRepeat'), 'sudadera_espalda_estampados', {});
+	});
+	
+	var allBTNDel = $$('#sudadera_espalda_estampados .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'sudadera_espalda_estampados');
+		});
+	});
+
+
+
 	
 }
 

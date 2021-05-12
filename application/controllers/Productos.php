@@ -9,7 +9,7 @@ class Productos extends CI_Controller {
 	
 	public $mainPage = 'home';
 	public $mainPageName = 'Home';
-	public $seccionesInternas = ['sudadera_general', 'sudadera_color', 'sudadera_estampados'];
+	public $seccionesInternas = ['sudadera_general', 'sudadera_color', 'sudadera_estampados','sudadera_lateral_color', 'sudadera_lateral_estampados','sudadera_espalda_color', 'sudadera_espalda_estampados'];
 	
 	public $varFlash = 'flashCultura';
 	public $success = [];

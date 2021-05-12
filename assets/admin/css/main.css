@@ -468,9 +468,16 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 
 /* Navegador de control de guardado general para cada modulo */
 #nav_save_control{
-	position: absolute;
-	width: 100%;
-	top: -16px;
+	position: fixed;
+    width: auto;
+    top: 0vh;
+    right: 10vw;
+    background-color: white;
+    padding: 9px 23px;
+    z-index: 999999;
+    color: black;
+    border-radius: 6px;
+}
 }
 #nav_save_spacefin{
 	height: 36px;
@@ -481,6 +488,9 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
     font-size: 120%;
     padding: 0 1rem 0 0;
     vertical-align: -webkit-baseline-middle;
+}
+#nav_save_control .pageTitulo{
+	color: black
 }
 #nav_save_control .btn{
 	float: right;
