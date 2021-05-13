@@ -218,7 +218,6 @@ function removeInputIMG(bloque, cleanBox, clone, imagen, tipo, seccion, item, ca
 }
 
 
-
 // 	Funciones para activar los botones de clones de registros
 function activar(copia, seccion, padre,  a){
 	var btn_menos = copia.getElement(".menos");

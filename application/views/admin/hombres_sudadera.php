@@ -128,7 +128,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Prenda del color:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -205,7 +205,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Foto portada de la colección:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -243,7 +243,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen del modelo 1:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -276,7 +276,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen del modelo 2:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -310,7 +310,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen del modelo 3:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -344,7 +344,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen del modelo 4:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -384,7 +384,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 1:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -417,7 +417,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 2:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -451,7 +451,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 3:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -485,7 +485,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 4:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -583,25 +583,6 @@
 				<?php echo form_input( $data_input ); ?>
 				</div>
 			
-<!--
-			<?php
-				$valor = 'sudadera_lateral_color_valor';
-				$data_input  =  array ( 
-					'name' => '',
-					'value' => '',
-					'class' => 'validaciones vc form-control input-lg conteo',
-					'autocomplete' => 'off',
-					'placeholder' => '',
-					'data-conteovalin' => "sectores[$baseName][txts][$fotoName][clone][",
-					'data-conteovalfin' => "][$valor]",
-					'data-conteoval' => "name"
-				);
-			?>				
-				<div>
-				<label>Colocar color en Hexadecimal:</label>
-				<?php echo form_input( $data_input ); ?>
-				</div>
--->
 			</div>
 				
 			<div class="">
@@ -626,7 +607,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Prenda del color:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -679,181 +660,7 @@
 			?>				
 				<label>Nombre de la colección:</label>
 				<?php echo form_input( $data_input ); ?>
-				
-			
-<!--
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Foto portada de la colección:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			
-			<div>
-				<h3>Modelos:</h3>
-			</div>
-			<div class="box4col">
-			<?php $fotoName = "model1_lateral"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 1:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			<?php $fotoName = "model2_lateral"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 2:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			
-			<?php $fotoName = "model3_lateral"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 3:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			
-			<?php $fotoName = "model4_lateral"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 4:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			</div>
--->
-			
+							
 			
 			
 			<div>
@@ -884,7 +691,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 1:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -917,7 +724,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 2:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -951,7 +758,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 3:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -985,7 +792,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 4:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -1093,25 +900,7 @@
 				<?php echo form_input( $data_input ); ?>
 				</div>
 			
-<!--
-			<?php
-				$valor = 'sudadera_espalda_color_valor';
-				$data_input  =  array ( 
-					'name' => '',
-					'value' => '',
-					'class' => 'validaciones vc form-control input-lg conteo',
-					'autocomplete' => 'off',
-					'placeholder' => '',
-					'data-conteovalin' => "sectores[$baseName][txts][$fotoName][clone][",
-					'data-conteovalfin' => "][$valor]",
-					'data-conteoval' => "name"
-				);
-			?>				
-				<div>
-				<label>Colocar color en Hexadecimal:</label>
-				<?php echo form_input( $data_input ); ?>
-				</div>
-	-->		</div>
+		</div>
 
 				
 			<div class="">
@@ -1136,7 +925,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Prenda del color:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -1189,181 +978,7 @@
 			?>				
 				<label>Nombre de la colección:</label>
 				<?php echo form_input( $data_input ); ?>
-				
-			
-<!--
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Foto portada de la colección:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			
-			<div>
-				<h3>Modelos:</h3>
-			</div>
-			<div class="box4col">
-			<?php $fotoName = "model1_espalda"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 1:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			<?php $fotoName = "model2_espalda"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 2:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			
-			<?php $fotoName = "model3_espalda"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 3:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			
-			
-			<?php $fotoName = "model4_espalda"; ?>
-			<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-			<div class="">
-				<?php
-					$data_input_hidden  =  array ( 
-						'type' => 'hidden',
-						'class' => 'conteo',
-						'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-						'data-conteovalfin' => "][falso]",
-						'data-conteoval' => "name"
-					);
-					$data_input =  array ( 
-						'name' => '',
-						'value' => '',
-						'class' => 'validaciones vc form-control input-lg conteo',
-						'autocomplete' => 'off',
-						'placeholder' => '',
-						'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-						'data-conteovalfin' => "",
-						'data-conteoval' => "name"
-					);
-				?>
-				<div class="bloque_imagen">
-					<label>Imagen del modelo 4:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-					<?php
-					echo form_input( $data_input_hidden );
-						echo form_upload( $data_input );
-					?>
-					</div>
-				</div>
-			</div>
-			</div>
--->
-			
+							
 			
 			
 			<div>
@@ -1394,7 +1009,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 1:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -1427,7 +1042,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 2:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -1461,7 +1076,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 3:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -1495,7 +1110,7 @@
 				?>
 				<div class="bloque_imagen">
 					<label>Imagen prenda del modelo 4:</label>
-					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
+					<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen" data-cloneinfo="<?php echo($fotoName); ?>_imagen">
 					<?php
 					echo form_input( $data_input_hidden );
 						echo form_upload( $data_input );
@@ -2706,25 +2321,7 @@
 										<?php echo form_input( $data_input ); ?>
 										</div>
 										
-<!--
-									<?php
-										$valor = 'sudadera_lateral_color_valor';
-										$data_input  =  array ( 
-											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
-											'value' => @$v->{$valor},
-											'class' => 'validaciones vc form-control input-lg pick-a-color form-control',
-											'autocomplete' => 'off',
-											'placeholder' => '',
-											'data-conteovalin' => "sectores[$baseName][txts][$fotoName][clone][",
-											'data-conteovalfin' => "][$valor]",
-											'data-conteoval' => "name"
-										);
-									?>				
-										<div>
-										<label>Colocar color en Hexadecimal:</label>
-										<?php echo form_input( $data_input ); ?>
-										</div>
--->									</div>
+									</div>
 
 										
 									
@@ -2878,324 +2475,6 @@
 										<?php echo form_input( $data_input ); ?>
 										
 									
-									
-<!--
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Foto portada para la colección:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									
-									<div>
-										<h3>Modelos:</h3>
-									</div>
-									<div class="box4col">
-										
-									<?php $fotoName = "model1_lateral"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 1:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									<?php $fotoName = "model2_lateral"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 2:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									<?php $fotoName = "model3_lateral"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 3:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													//print_r($vDB->imgs->{$fotoName}->{$num});
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													//isset($vDB->imgs->{$fotoName}[(int)$i])
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									<?php $fotoName = "model4_lateral"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 4:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									</div>
--->
 									
 									
 									<div>
@@ -3627,25 +2906,7 @@
 										<?php echo form_input( $data_input ); ?>
 										</div>
 										
-<!--
-									<?php
-										$valor = 'sudadera_espalda_color_valor';
-										$data_input  =  array ( 
-											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
-											'value' => @$v->{$valor},
-											'class' => 'validaciones vc form-control input-lg pick-a-color form-control',
-											'autocomplete' => 'off',
-											'placeholder' => '',
-											'data-conteovalin' => "sectores[$baseName][txts][$fotoName][clone][",
-											'data-conteovalfin' => "][$valor]",
-											'data-conteoval' => "name"
-										);
-									?>				
-										<div>
-										<label>Colocar color en Hexadecimal:</label>
-										<?php echo form_input( $data_input ); ?>
-										</div>
--->									</div>
+									</div>
 
 										
 									
@@ -3799,325 +3060,7 @@
 										<?php echo form_input( $data_input ); ?>
 										
 									
-									
-<!--
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Foto portada para la colección:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									
-									<div>
-										<h3>Modelos:</h3>
-									</div>
-									<div class="box4col">
-										
-									<?php $fotoName = "model1_espalda"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 1:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									<?php $fotoName = "model2_espalda"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 2:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									<?php $fotoName = "model3_espalda"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 3:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													//print_r($vDB->imgs->{$fotoName}->{$num});
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													//isset($vDB->imgs->{$fotoName}[(int)$i])
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									
-									
-									<?php $fotoName = "model4_espalda"; ?>
-									<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgs][<?php echo($fotoName); ?>][folder]" value="<?php echo($folder); ?>"></input>
-									<div class="">
-										<?php
-											$data_input_hidden  =  array ( 
-												'name' => "sectores[$baseName][imgs][$fotoName][clone][".(int)$i."][falso]",
-												'type' => 'hidden',
-												'class' => 'conteo',
-												'data-conteovalin' => "sectores[$baseName][imgs][$fotoName][clone][",
-												'data-conteovalfin' => "][falso]",
-												'data-conteoval' => "name"
-											);
-											$data_input =  array ( 
-												'name' => "sectores_".$baseName."_imgs_".$fotoName."_clone".$i,
-												'value' => '',
-												'class' => 'validaciones vc form-control input-lg conteo',
-												'autocomplete' => 'off',
-												'placeholder' => '',
-												'data-conteovalin' => "sectores_".$baseName."_imgs_".$fotoName."_clone",
-												'data-conteovalfin' => "",
-												'data-conteoval' => "name"
-											);
-										?>
-										<div class="bloque_imagen">
-											<label>Imagen del modelo 4:</label>
-											<div class="cleanBox" data-clonetype="<?php echo($fotoName); ?>_imagen">
-											<?php
-												if(property_exists($vDB, "imgs") && property_exists($vDB->imgs, $fotoName)  && isset($vDB->imgs->{$fotoName})){
-													$v = "";
-													if(is_object($vDB->imgs->{$fotoName})){
-														$num = strval($i+1);
-														if(isset($vDB->imgs->{$fotoName}->{$num})){
-															$v = $vDB->imgs->{$fotoName}->{$num};
-														}
-													}
-													if(is_array($vDB->imgs->{$fotoName})){
-														if(isset($vDB->imgs->{$fotoName}[(int)$i])){
-															$v = $vDB->imgs->{$fotoName}[(int)$i];
-														}
-													}
-													if($v !== ""){
-														$data = [];
-														$data['img'] = base_url('assets/public/img'.$folder.'/'.$v);
-														$data['name'] = $v;
-														$data['hname'] = 'sectores['.$baseName.'][imgs]['.$fotoName.'][clone]['.(int)$i.'][name]';
-														$data['classAdd'] = 'conteo';
-														$data['propertyAdd'] = 'data-conteovalin="sectores['.$baseName.'][imgs]['.$fotoName.'][clone][" data-conteovalfin="][name]" data-conteoval="name"';
-														$this->load->view('admin/plantillas/img_block', $data);
-													} else{
-														echo form_input( $data_input_hidden );
-														echo form_upload( $data_input );
-													}
-												} else{
-													echo form_input( $data_input_hidden );
-													echo form_upload( $data_input );
-												}
-											?>
-											</div>
-										</div>
-									</div>
-									</div>
--->
-									
+																		
 									
 									<div>
 										<h3>Prendas de modelo:</h3>
