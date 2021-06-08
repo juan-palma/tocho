@@ -513,6 +513,13 @@ var normalize = (function() {
 
 
 
+
+
+
+
+
+
+
 var globAc = {};
 
 
@@ -534,6 +541,11 @@ function cortePut(){
 globAc.vistas = {};
 globAc.vistas.activo = "vistaFrente";
 globAc.vistas.btn = document.id('vistaFrente').addClass('activo');
+
+document.id('prendaNumero').set('data-vista', globAc.vistas.activo);
+document.id('prendaNombre').set('data-vista', globAc.vistas.activo);
+document.id('prendaLogo').set('data-vista', globAc.vistas.activo)
+	
 function controlVistas(){
 	if(globAc.vistas.activo === this.idaVal.val ){ return false; }
 	globAc.vistas.btn.removeClass('activo');
@@ -571,7 +583,7 @@ function controlVistas(){
 		}
 	}
 	catch (e) {
-	   //logMyErrors(e); // pasa el objeto de la excepción al manejador de errores
+	   slogMyErrors(e); // pasa el objeto de la excepción al manejador de errores
 	}
 	
 	var boxS = document.id('prendaSombra');
@@ -582,16 +594,27 @@ function controlVistas(){
 	var box = document.id("prendaBaseColor");
 	var img = new Element('img', {'src':imagen, 'class':''});
 	box.empty();
-	if(imagen === undefined){return false;}
-	box.adopt([img]);
+	if(imagen !== undefined){
+		box.adopt([img]);
+	}
 	
 	
 	var box = document.id("prendaEstampado");
-	if(estampado === undefined){box.empty(); return false;}
-	var img = new Element('img', {'src':estampado.imagen, 'class':'blendM1'});
-	var img2 = new Element('img', {'src':estampado.imagen, 'class':'blendM2'});
-	box.empty();
-	box.adopt([img, img2]);
+	if(estampado !== undefined){
+		var img = new Element('img', {'src':estampado.imagen, 'class':'blendM1'});
+		var img2 = new Element('img', {'src':estampado.imagen, 'class':'blendM2'});
+		box.empty();
+		box.adopt([img, img2]);
+	} else{
+		box.empty();
+	}
+	
+	
+	
+	document.id('prendaNumero').set('data-vista', globAc.vistas.activo);
+	document.id('prendaNombre').set('data-vista', globAc.vistas.activo);
+	document.id('prendaLogo').set('data-vista', globAc.vistas.activo);
+	
 }
 
 
@@ -743,10 +766,8 @@ function clearEstampado(){
 
 
 function controlNumero(){
-	var pos = $$('#prendaVFija .optionBoxMainValores select[name="ubicacion"]');
-	pos = pos[0];
-	var numero = $$('#prendaVFija .optionBoxMainValores input[name="numero"]');
-	numero = numero[0];
+	var pos = document.id('prendaVFija').getElement('.optionBoxMainValores select[name="ubicacion"]');
+	var numero = document.id('prendaVFija').getElement('.optionBoxMainValores input[name="numero"]')
 	
 	if(numero.value === ""){return false;};
 	
@@ -773,11 +794,63 @@ function controlNumero(){
 	}
 }
 
+function controlNombre(){
+	var pos = document.id('prendaVFija').getElement('.optionBoxMainValores select[name="ubicacion"]');
+	var nombre = document.id('prendaVFija').getElement('.optionBoxMainValores input[name="nombre"]')
+	
+	if(nombre.value === ""){return false;};
+	
+	var textoC = document.id('prendaNombre').getElement('.posCentro span');
+	var textoD = document.id('prendaNombre').getElement('.posDerecha span');
+	var textoI = document.id('prendaNombre').getElement('.posIzquierda span');
+	
+	textoC.empty();
+	textoD.empty();
+	textoI.empty();
+	
+	switch(pos.value){
+		case "centro":
+			textoC.set('html', nombre.value);
+		break;
+		
+		case "derecha":
+			textoD.set('html', nombre.value);
+		break;
+		
+		case "izquierda":
+			textoI.set('html', nombre.value);
+		break;
+	}
+}
+
 
 function controlTipogra(){
 	var prendaI =  document.id('prendaI');
 	
 	prendaI.setStyle('font-family', this.value);
+}
+
+
+
+
+function controlEscudo(f){
+	console.info(f);
+	if(f.length > 0){
+		var file = f[0];
+		var imageType = /image.*/;
+	
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		document.id('prendaLogo').empty().grab(img);
+		
+		var reader = new FileReader();
+		reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+		reader.readAsDataURL(file);
+	} else{
+		document.id('prendaLogo').empty();
+	}
+	
 }
 
 
@@ -833,32 +906,41 @@ function activarFijosPrenda(){
 		});
 	});
 	
-	var nombre = $$('#prendaVFija .optionBoxMainValores input[name="nombre"]');
-	nombre = nombre[0];
+	//var nombre = $$('#prendaVFija .optionBoxMainValores input[name="nombre"]');
+	//nombre = nombre[0];
+	var nombre = document.id('prendaVFija').getElement('.optionBoxMainValores input[name="nombre"]');
 	nombre.addEvent('change', function(){
-		var texto = document.id('prendaNombre').getElement('.posCentro span');
-		texto.empty().set('html', this.value);
+		controlNombre();
 	});
 	
-	var numero = $$('#prendaVFija .optionBoxMainValores input[name="numero"]');
-	numero = numero[0];
+	//var numero = $$('#prendaVFija .optionBoxMainValores input[name="numero"]');
+	//numero = numero[0];
+	var numero = document.id('prendaVFija').getElement('.optionBoxMainValores input[name="numero"]');
 	numero.addEvent('change', function(){
 		controlNumero();
 	});
 	
-	var posicion = $$('#prendaVFija .optionBoxMainValores select[name="ubicacion"]');
-	posicion = posicion[0];
+	//var posicion = $$('#prendaVFija .optionBoxMainValores select[name="ubicacion"]');
+	//posicion = posicion[0];
+	var posicion = document.id('prendaVFija').getElement('.optionBoxMainValores select[name="ubicacion"]');
 	posicion.addEvent('change', function(){
 		controlNumero();
+		controlNombre();
 	});
 	
-	var tipografia = $$('#prendaVFija .optionBoxMainValores select[name="tipografia"]');
-	tipografia = tipografia[0];
+	//var tipografia = $$('#prendaVFija .optionBoxMainValores select[name="tipografia"]');
+	///tipografia = tipografia[0];
+	var tipografia = document.id('prendaVFija').getElement('.optionBoxMainValores select[name="tipografia"]');
 	tipografia.addEvent('change', function(){
 		controlTipogra.call(this);
 	});
 	controlTipogra.call(tipografia);
 	
+	var fileBtn = document.id('prendaVFija').getElement('.optionBoxMainValores input[type="file"]');
+	fileBtn.addEvent('change', function(){
+		controlEscudo.call(this, this.files);
+	});
+	//fileBtn.addEventListener("change", controlEscudo, false);
 	
 }
 

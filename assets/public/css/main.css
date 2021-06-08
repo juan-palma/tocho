@@ -1037,7 +1037,7 @@ body#productos{
 				}
 				
 			.boxAllEffect{
-				display: flex;
+				display: block;
 				position: relative;
 			}
 			
@@ -1070,77 +1070,383 @@ body#productos{
 			#prendaNombre{
 				
 			}
-				#prendaNombre .posCentro{
+				#prendaNombre[data-vista="vistaFrente"] .posCentro{
 					transform-style: preserve-3d;
-				    transform: rotateX(35deg) rotateY(11deg) rotatez(-11deg);
+/* 				    transform: rotateX(35deg) rotateY(11deg) rotatez(-11deg); */
 				    position: relative;
-				    top: 7.4vw;
-				    left: 20.2vw;
+				    top: 14.1vw;
+				    left: 19.4vw;
 				    text-align: center;
 				    width: 33%;
 				    overflow: hidden;
 				    height: auto;
 				}
-					#prendaNombre .posCentro span{
+					#prendaNombre[data-vista="vistaFrente"] .posCentro span{
 						font-size: 2.6vw;
 					    color: white;
 					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
 					    line-height: 2.4vw;
 					}
 					
+				#prendaNombre[data-vista="vistaFrente"] .posIzquierda{
+					transform-style: preserve-3d;
+/* 				    transform: rotateX(35deg) rotateY(11deg) rotatez(-11deg); */
+				    position: relative;
+				    top: 14.1vw;
+				    left: 19.4vw;
+				    text-align: right;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaFrente"] .posIzquierda span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+				#prendaNombre[data-vista="vistaFrente"] .posDerecha{
+					transform-style: preserve-3d;
+/* 				    transform: rotateX(35deg) rotateY(11deg) rotatez(-11deg); */
+				    position: relative;
+				    top: 14.1vw;
+				    left: 19.4vw;
+				    text-align: left;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaFrente"] .posDerecha span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+					
+				
+				
+				#prendaNombre[data-vista="vistaLateral"] .posCentro{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(6deg) rotatez(1deg);
+				    position: relative;
+				    top: 15vw;
+				    left: 16.6vw;
+				    text-align: center;
+				    width: 29%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaLateral"] .posCentro span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+				#prendaNombre[data-vista="vistaLateral"] .posIzquierda{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(6deg) rotatez(1deg);
+				    position: relative;
+				    top: 15vw;
+				    left: 16.6vw;
+				    text-align: right;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaLateral"] .posIzquierda span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+				#prendaNombre[data-vista="vistaLateral"] .posDerecha{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(6deg) rotatez(1deg);
+				    position: relative;
+				    top: 15vw;
+				    left: 16.6vw;
+				    text-align: left;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaLateral"] .posDerecha span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+				
+				
+				
+				
+				#prendaNombre[data-vista="vistaEspalda"] .posCentro{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+				    position: relative;
+				    top: 15.4vw;
+				    left: 24.6vw;
+				    width: 28.4%;
+				    text-align: center;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaEspalda"] .posCentro span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+				#prendaNombre[data-vista="vistaEspalda"] .posDerecha{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+				    position: relative;
+				    top: 15.4vw;
+				    left: 24.6vw;
+				    width: 27.4%;
+				    text-align: right;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaEspalda"] .posDerecha span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+				#prendaNombre[data-vista="vistaEspalda"] .posIzquierda{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+				    position: relative;
+				    top: 15.4vw;
+				    left: 24.6vw;
+				    width: 28.4%;
+				    text-align: left;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNombre[data-vista="vistaEspalda"] .posIzquierda span{
+						font-size: 2.6vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					    line-height: 2.4vw;
+					}
+					
+					
+					
+					
+					
+					
+					
 			#prendaNumero{
 				
 			}
-				#prendaNumero .posCentro{
+				#prendaNumero[data-vista="vistaFrente"] .posCentro{
 					transform-style: preserve-3d;
-				    transform: rotateX(45deg) rotateY(11deg) rotatez(-14deg);
+				    transform: rotateX(-10deg) rotateY(0deg) rotatez(0deg);
 				    position: relative;
-				    top: 9.8vw;
-				    left: 22vw;
+				    top: 14.8vw;
+				    left: 19.4vw;
 				    text-align: center;
 				    width: 33%;
 				    overflow: hidden;
 				    height: auto;
 				}
-					#prendaNumero .posCentro span{
-						font-size: 6vw;
-					    color: white;
-					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
-					}
-					
-				#prendaNumero .posDerecha{
-					transform-style: preserve-3d;
-				    transform: rotateX(45deg) rotateY(11deg) rotatez(-14deg);
-				    position: relative;
-				    top: 9.4vw;
-				    left: 22vw;
-				    text-align: center;
-				    width: 12%;
-				    overflow: hidden;
-				    height: auto;
-				}
-					#prendaNumero .posDerecha span{
-						font-size: 6vw;
-					    color: white;
-					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
-					}
-				
-				#prendaNumero .posIzquierda{
-					transform-style: preserve-3d;
-					transform: rotateX(51deg) rotateY(38deg) rotatez(-35deg);
-				    position: relative;
-				    top: 8.8vw;
-				    left: 32vw;
-				    text-align: center;
-				    width: 11%;
-				    overflow: hidden;
-				    height: auto;
-				}
-					#prendaNumero .posIzquierda span{
+					#prendaNumero[data-vista="vistaFrente"] .posCentro span{
 						font-size: 5.4vw;
 					    color: white;
 					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
 					}
+					
+				#prendaNumero[data-vista="vistaFrente"] .posIzquierda{
+					transform-style: preserve-3d;
+				    transform: rotateX(-10deg) rotateY(0deg) rotatez(0deg);
+				    position: relative;
+				    top: 14.8vw;
+				    left: 19.4vw;
+				    text-align: right;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaFrente"] .posIzquierda span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+				
+				#prendaNumero[data-vista="vistaFrente"] .posDerecha{
+					transform-style: preserve-3d;
+					transform: rotateX(-10deg) rotateY(0deg) rotatez(0deg);
+				    position: relative;
+				    top: 14.8vw;
+				    left: 19.4vw;
+				    text-align: left;
+				    width: 33%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaFrente"] .posDerecha span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+				
+				
+				
+				
+				#prendaNumero[data-vista="vistaLateral"] .posCentro{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(6deg) rotatez(1deg);
+				    position: relative;
+				    top: 15.8vw;
+				    left: 16.5vw;
+				    text-align: center;
+				    width: 28%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaLateral"] .posCentro span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+					
+				#prendaNumero[data-vista="vistaLateral"] .posIzquierda{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(6deg) rotatez(1deg);
+				    position: relative;
+				    top: 15.8vw;
+				    left: 16.5vw;
+				    text-align: right;
+				    width: 32%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaLateral"] .posIzquierda span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+				
+				#prendaNumero[data-vista="vistaLateral"] .posDerecha{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(6deg) rotatez(1deg);
+				    position: relative;
+				    top: 15.8vw;
+				    left: 16.5vw;
+				    text-align: left;
+				    width: 28%;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaLateral"] .posDerecha span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+				
+				
+				
+				
+				#prendaNumero[data-vista="vistaEspalda"] .posCentro{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+				    position: relative;
+				    top: 16.2vw;
+				    left: 25vw;
+				    width: 27%;
+				    text-align: center;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaEspalda"] .posCentro span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+					
+				#prendaNumero[data-vista="vistaEspalda"] .posDerecha{
+					transform-style: preserve-3d;
+				    transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+				    position: relative;
+				    top: 16.2vw;
+				    left: 25vw;
+				    width: 26%;
+				    text-align: right;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaEspalda"] .posDerecha span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+				
+				#prendaNumero[data-vista="vistaEspalda"] .posIzquierda{
+					transform-style: preserve-3d;
+					transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+				    position: relative;
+				    top: 16.2vw;
+				    left: 25vw;
+				    width: 27%;
+				    text-align: left;
+				    overflow: hidden;
+				    height: auto;
+				}
+					#prendaNumero[data-vista="vistaEspalda"] .posIzquierda span{
+						font-size: 5.4vw;
+					    color: white;
+					    text-shadow: -1px 1px 6px rgb(0 0 0 / 26%);
+					}
+		
+		
+			
+			
+			
+			
+			
+			#prendaLogo{
+				
+			}
+				#prendaLogo[data-vista="vistaFrente"] img{
+					position: relative;
+					width: 10vw;
+				    left: 23.4vw;
+				    top: 25vw;
+				}
+				
+				#prendaLogo[data-vista="vistaLateral"] img{
+					position: relative;
+					width: 10vw;
+				    left: 19.4vw;
+				    top: 25vw;
+				    transform-style: preserve-3d;
+				    transform: rotateY(-33deg) rotateX(-1deg) rotatez(3deg);
+				}
+				
+				#prendaLogo[data-vista="vistaEspalda"] img{
+					position: relative;
+					width: 10vw;
+				    left: 24.7vw;
+				    top: 25vw;
+				    transform-style: preserve-3d;
+					transform: rotateY(-28deg) rotateX(17deg) rotatez(-3deg);
+					display: none;
+				}
+		
+		
+		
+		
+		
+		
+		
 		
 		#prendaV{
 			flex: 1 1 40%;

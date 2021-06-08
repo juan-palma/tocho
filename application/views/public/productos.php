@@ -335,6 +335,12 @@
 								<div class="posCentro">
 									<span></span>
 								</div>
+								<div class="posDerecha">
+									<span></span>
+								</div>
+								<div class="posIzquierda">
+									<span></span>
+								</div>
 							</div>
 							
 							<div id="prendaSombra" class="">
