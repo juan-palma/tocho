@@ -8,7 +8,10 @@ class Hombres_sudadera extends CI_Controller {
 	
 	public $mainPage = 'hombres_sudadera';
 	public $mainPageName = 'Hombres_sudadera';
-	public $seccionesInternas = ['sudadera_general', 'sudadera_color', 'sudadera_estampados','sudadera_lateral_color', 'sudadera_lateral_estampados','sudadera_espalda_color', 'sudadera_espalda_estampados'];
+	public $nombrePrenda = "sudadera";
+	public $sexo = "hombres";
+	
+	public $seccionesInternas = ['base', 'color', 'estampados','lateral_color', 'lateral_estampados','espalda_color', 'espalda_estampados'];
 	
 	public $varFlash = 'flashCultura';
 	public $success = [];
@@ -46,6 +49,8 @@ class Hombres_sudadera extends CI_Controller {
 		$data['titulo'] = $this->mainPageName;
 		$data['actual'] = $this->mainPage;
 		$data['varFlash'] = $this->varFlash;
+		$data['nombrePrenda'] = $this->nombrePrenda;
+		$data['sexo'] = $this->sexo;
 		$this->load->view('admin/head2', $data);
 		$this->load->view('admin/saveControl', $data);
 		$this->load->view('admin/'.$this->mainPage, $data);

@@ -43,6 +43,46 @@ if ( ! function_exists('isNoLogged'))
 }
 
 
+
+if ( ! function_exists('isNoLoggedCustom'))
+{
+	/**
+	 * Is Logged
+	 *
+	 * revisa si el usuario que desea enrar a personalizar un uniforme se encuenra logueado
+	 *
+	 * @return	redirect to login or redirecto to panel
+	 */
+	function isNoLoggedCustom(){
+		if( (!isset($_SESSION['idUser']) || $_SESSION['idUser'] === '') ){
+			//session_destroy();
+			return false;
+		} else{
+			return true;
+		}
+	}
+}
+if ( ! function_exists('isLoggedNoDataCustom'))
+{
+	/**
+	 * Is Logged
+	 *
+	 * revisa si el usuario que desea enrar a personalizar un uniforme ha ingresado los datos de equipo y liga para poder continuar con la siguente ventana
+	 *
+	 * @return	redirect to login or redirecto to panel
+	 */
+	function isLoggedNoDataCustom(){
+		if( (!isset($_SESSION['userEquipo']) || $_SESSION['userEquipo'] === '') || (!isset($_SESSION['userLiga']) || $_SESSION['userLiga'] === '') ){
+			return false;
+		} else{
+			return true;
+		}
+	}
+}
+
+
+
+
 if ( ! function_exists('isNoLoggedProfile'))
 {
 	/**

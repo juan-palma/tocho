@@ -1709,7 +1709,7 @@ body#productos{
 	
 		
 		
-/* 	Home Quienes Somos */
+/* 	Home */
 	body#home .mainbox.bl2{
 		text-align: center;
 		padding: 0px;
@@ -1769,10 +1769,6 @@ body#productos{
 */
 
 
-
-
-
-/* 	Home Servicios */
 	body#home .mainbox.bl3{
 		text-align: center;
 		height: auto;
@@ -1832,148 +1828,33 @@ body#productos{
 
 
 
-/* 	Home Portafolio */
-/*
-	body#home .mainbox.bl4{
-		text-align: center;
-		padding: 0px;
-		height: auto;
-		min-height: 20vh;
-	}
-		body#home .mainbox.bl4 .slideMain{
-			width: 100%;
-			height: 100%;
-			position: relative;
-		}
-			body#home .mainbox.bl4 .slideMain .slideItems{				height: 100%;
-				display: flex;
-			}
-				body#home .mainbox.bl4 .slideMain .slideItems article{
-					background-size: cover;
-				    height: 100%;
-				    background-position: center;
-				    display: flex;
-					flex-direction: column;
-					align-items: center;
-					padding: 10rem 5rem;
-					justify-content: center;
-				}
-					body#home .mainbox.bl4 .slideMain .slideItems article .contenedor{
-						width: 100%;
-					    text-align: center;
-					    display: flex;
-					    flex-direction: column;
-					    align-items: center;
-					    justify-content: center;
-					}
-						body#home .mainbox.bl4 .slideMain .slideItems article .portafolioTitulos{
-							font-family: 'Montserrat ExtraBold';
-						    color: #fff;
-						    margin: 0px;
-						    letter-spacing: 1rem;
-						    text-align: center;
-						    text-transform: uppercase;
-						}
-						body#home .mainbox.bl4 .slideMain .slideItems article .nombreProyecto{
-							font-family: 'Montserrat ExtraBold';
-							color: #fff;
-							margin: 0px;
-							letter-spacing: 14px;
-							text-transform: uppercase;
-						}
-						body#home .mainbox.bl4 .slideMain .slideItems article a .btnVerMas{
-							padding: 6px 39px;
-							color: white;
-						}
 
 
-	body#home .mainbox.bl4 .tns-nav{
+
+
+#nav{
+	display: none !important;
+}
+
+
+	#mainLoginCustom{
+		widows: 100%;
+		height: 100vh;
 		display: flex;
-	    position: absolute;
-	    height: 100%;
-	    justify-content: center;
-	    flex-direction: column;
-	    padding-left: 10px;
+		padding: 6vw;
+		flex-direction: column;
+		text-align: left;
+		align-items: center;
+		justify-content: center;
 	}
-		body#home .mainbox.bl4 .tns-nav button {
-			display: inline-block;
-			width: 13px;
-			height: 15px;
-			position: relative;
-			border-radius: 44px;
-			border: 1px solid white;
-			margin-bottom: 4px;
-			
-			-webkit-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
-			-ms-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
+		#mainLoginCustom form{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			align-content: space-around;
+			justify-content: center;
+			align-items: stretch;
 		}
-		body#home .mainbox.bl4 .tns-nav button.tns-nav-active{
-			background-color: white;
-		}
-		body#home .mainbox.bl4  .tns-controls{
-			position: absolute;
-		    right: 2rem;
-		    bottom: -15px;
-		    display: block;
-		    width: auto;
-		    outline: none;
-		}
-			body#home .mainbox.bl4 .tns-controls button{
-				position: relative;
-				visibility: hidden;
-				margin: 0px;
-				padding: 0px;
-				
-				-webkit-transition: all 0.2s ease-in-out;
-				-moz-transition: all 0.2s ease-in-out;
-				-o-transition: all 0.2s ease-in-out;
-				-ms-transition: all 0.2s ease-in-out;
-				transition: all 0.2s ease-in-out;
-			}
-			body#home .mainbox.bl4 .tns-controls button[data-controls="prev"]:after {
-			    content: '';
-			    visibility: visible;
-			    display: block;
-			    position: relative;
-			    background-color: rgba(255, 255, 255, 0.7);
-			    padding: 17px 27px;
-			    top: 2px;
-			    background-image: url(../img/flecha_back.svg);
-			    height: 27px;
-			    width: 44px;
-			    background-repeat: no-repeat;
-			    background-position: center center;
-			    background-size: 23px 18px;
-			}
-			body#home .mainbox.bl4 .tns-controls button[data-controls="next"]:after {
-			    content: '';
-			    visibility: visible;
-			    display: block;
-			    position: relative;
-			    background-color: rgba(255, 255, 255, 0.7);
-			    padding: 17px 27px;
-			    top: 2px;
-			    background-image: url(../img/flecha_next.svg);
-			    height: 27px;
-			    width: 44px;
-			    background-repeat: no-repeat;
-			    background-position: center center;
-			    background-size: 23px 18px;
-			}
-			body#home .mainbox.bl4 .tns-controls button:hover[data-controls]:after{
-				-webkit-transition: all 0.2s ease-in-out;
-				-moz-transition: all 0.2s ease-in-out;
-				-o-transition: all 0.2s ease-in-out;
-				-ms-transition: all 0.2s ease-in-out;
-				transition: all 0.2s ease-in-out;
-			}
-			body#home .mainbox.bl4 .tns-controls button:hover[data-controls]:after{
-				background-color: #FEB662;
-			}
-*/
 
 
 
@@ -1982,50 +1863,11 @@ body#productos{
 
 
 
-/* 	Home Clientes */
-/*
-	body#home .mainbox.bl5{
-		text-align: center;
-		padding: 0px;
-		height: auto;
-		min-height: 20vh;
-		background-color: var(--colorPrincipal);
-		padding-bottom: 1.5rem;
-	}
-		body#home .mainbox.bl5 .slideMain{
-			width: 90%;
-			height: 100%;
-			position: relative;
-		}
-			body#home .mainbox.bl5 .slideMain .tns-controls,
-			body#home .mainbox.bl5 .slideMain .tns-nav{
-				display: none;
-			}
-			body#home .mainbox.bl5 .slideMain .clienteTitulos{
-				font-family: 'Montserrat ExtraBold';
-				letter-spacing: 24px;
-			}
-			body#home .mainbox.bl5 .slideMain .slideItems{
-			    height: 100%;
-			    display: flex;
-			    justify-content: space-evenly;
-			    align-items: center;
-			    padding: 1rem 0rem;
-			}
-				body#home .mainbox.bl5 .slideMain .slideItems .logo{
-				}
-					body#home .mainbox.bl5 .slideMain .slideItems .logo img{
-						max-width: 66%;
-					}
-*/
-					
-					
-					
-					
-					
-					
-					
-					
+
+
+
+
+
 /* 	Footer */
 	#footer.mainbox{
 		text-align: center;

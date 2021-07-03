@@ -782,8 +782,8 @@ function hombres_sudadera_inicio(){
 			//remplazar los input por imagenes cargadas
 			
 /*
-			if(j.valores.sudadera_color.prenda.length > 0){
-				removeInputIMG(document.id('sudadera_color'), '.sombra', 'imgBlock', j.valores.sudadera_color.prenda[0],  'prenda', 'sudadera_color', 'base', 'hombres');
+			if(j.valores.color.prenda.length > 0){
+				removeInputIMG(document.id('color'), '.sombra', 'imgBlock', j.valores.color.prenda[0],  'prenda', 'color', 'base', 'hombres');
 				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
 				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
 			}
@@ -792,7 +792,7 @@ function hombres_sudadera_inicio(){
 			
 /*
 			if(j.valores.base.prenda[0] !== 'nop' && j.valores.base.prenda[0] !== ''){
-				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.prenda[0],  'prenda', 'sudadera_color', 'base', 'hombres');
+				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.prenda[0],  'prenda', 'color', 'base', 'hombres');
 				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
 				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
 			}
@@ -812,17 +812,17 @@ function hombres_sudadera_inicio(){
 	
 	
 	
-	activeImgBbox('sudadera_color');
-	document.id('sudadera_color_clonemas').addEvent('click', function(){
-		btnMas('prenda', document.id('sudadera_color').getElement('.boxRepeat'), 'sudadera_color', {});
+	activeImgBbox('color');
+	document.id('color_clonemas').addEvent('click', function(){
+		btnMas('prenda', document.id('color').getElement('.boxRepeat'), 'color', {});
 	});
 	
 	
-	var allBTNDel = $$('#sudadera_color .registro');
+	var allBTNDel = $$('#color .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'sudadera_color');
+			btnMenos.call(b, 'color');
 		});
 	});
 	
@@ -846,16 +846,16 @@ function hombres_sudadera_inicio(){
 	
 	
 	
-	activeImgBbox('sudadera_estampados');
-	document.id('sudadera_estampados_clonemas').addEvent('click', function(){
-		btnMas('sudadera_estampados', document.id('sudadera_estampados').getElement('.boxRepeat'), 'sudadera_estampados', {});
+	activeImgBbox('estampados');
+	document.id('estampados_clonemas').addEvent('click', function(){
+		btnMas('estampados', document.id('estampados').getElement('.boxRepeat'), 'estampados', {});
 	});
 	
-	var allBTNDel = $$('#sudadera_estampados .registro');
+	var allBTNDel = $$('#estampados .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'sudadera_estampados');
+			btnMenos.call(b, 'estampados');
 		});
 	});
 	
@@ -869,32 +869,32 @@ function hombres_sudadera_inicio(){
 	::::: Para la vista de LATERAL :::::
 	--------------------------------------------------------------
 */
-	activeImgBbox('sudadera_lateral_color');
-	document.id('sudadera_lateral_color_clonemas').addEvent('click', function(){
-		btnMas('prenda_lateral', document.id('sudadera_lateral_color').getElement('.boxRepeat'), 'sudadera_lateral_color', {});
+	activeImgBbox('lateral_color');
+	document.id('lateral_color_clonemas').addEvent('click', function(){
+		btnMas('prenda_lateral', document.id('lateral_color').getElement('.boxRepeat'), 'lateral_color', {});
 	});
 	
 	
-	var allBTNDel = $$('#sudadera_lateral_color .registro');
+	var allBTNDel = $$('#lateral_color .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'sudadera_lateral_color');
+			btnMenos.call(b, 'lateral_color');
 		});
 	});
 	
 	
 	
-	activeImgBbox('sudadera_lateral_estampados');
-	document.id('sudadera_lateral_estampados_clonemas').addEvent('click', function(){
-		btnMas('sudadera_lateral_estampados', document.id('sudadera_lateral_estampados').getElement('.boxRepeat'), 'sudadera_lateral_estampados', {});
+	activeImgBbox('lateral_estampados');
+	document.id('lateral_estampados_clonemas').addEvent('click', function(){
+		btnMas('lateral_estampados', document.id('lateral_estampados').getElement('.boxRepeat'), 'lateral_estampados', {});
 	});
 	
-	var allBTNDel = $$('#sudadera_lateral_estampados .registro');
+	var allBTNDel = $$('#lateral_estampados .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'sudadera_lateral_estampados');
+			btnMenos.call(b, 'lateral_estampados');
 		});
 	});
 	
@@ -909,32 +909,32 @@ function hombres_sudadera_inicio(){
 	::::: Para la vista de ESPALDA :::::
 	--------------------------------------------------------------
 */
-	activeImgBbox('sudadera_espalda_color');
-	document.id('sudadera_espalda_color_clonemas').addEvent('click', function(){
-		btnMas('prenda_espalda', document.id('sudadera_espalda_color').getElement('.boxRepeat'), 'sudadera_espalda_color', {});
+	activeImgBbox('espalda_color');
+	document.id('espalda_color_clonemas').addEvent('click', function(){
+		btnMas('prenda_espalda', document.id('espalda_color').getElement('.boxRepeat'), 'espalda_color', {});
 	});
 	
 	
-	var allBTNDel = $$('#sudadera_espalda_color .registro');
+	var allBTNDel = $$('#espalda_color .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'sudadera_espalda_color');
+			btnMenos.call(b, 'espalda_color');
 		});
 	});
 	
 	
 	
-	activeImgBbox('sudadera_espalda_estampados');
-	document.id('sudadera_espalda_estampados_clonemas').addEvent('click', function(){
-		btnMas('sudadera_espalda_estampados', document.id('sudadera_espalda_estampados').getElement('.boxRepeat'), 'sudadera_espalda_estampados', {});
+	activeImgBbox('espalda_estampados');
+	document.id('espalda_estampados_clonemas').addEvent('click', function(){
+		btnMas('espalda_estampados', document.id('espalda_estampados').getElement('.boxRepeat'), 'espalda_estampados', {});
 	});
 	
-	var allBTNDel = $$('#sudadera_espalda_estampados .registro');
+	var allBTNDel = $$('#espalda_estampados .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'sudadera_espalda_estampados');
+			btnMenos.call(b, 'espalda_estampados');
 		});
 	});
 

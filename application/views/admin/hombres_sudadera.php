@@ -2,6 +2,9 @@
 //espacio para codigo PHP:
 
 ?>
+
+
+
 <link href="<?php echo(base_url('assets/common/css/pick-a-color.min.css')) ?>" rel="stylesheet" type="text/css">
 <!--
 <script src="<?php echo(base_url('assets/common/js/librerias/tinycolor-0.9.15.min.js')) ?>"></script>
@@ -14,7 +17,7 @@
 	<div class="hiden boxClones">
 		
 		
-		<?php $baseName = "sudadera_color"; $fotoName = "sombra"; ?>
+		<?php $baseName = "color"; $fotoName = "sombra"; ?>
 		<div data-cloneinfo="<?php echo($fotoName); ?>">
 		<?php
 			$data_input_hidden  =  array ( 
@@ -44,7 +47,7 @@
 
 
 		
-		<?php $baseName = "sudadera_color"; $fotoName = "prenda"; ?>
+		<?php $baseName = "color"; $fotoName = "prenda"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($fotoName); ?>">
 			<div class="valHead">
 				<h5>Color <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"></span></h5>
@@ -70,7 +73,7 @@
 			
 			<div class="box2col">
 			<?php
-				$valor = 'sudadera_color_name';
+				$valor = 'color_name';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -88,7 +91,7 @@
 				</div>
 			
 			<?php
-				$valor = 'sudadera_color_valor';
+				$valor = 'color_valor';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -142,7 +145,7 @@
 		
 		
 		
-		<?php $baseName = "sudadera_estampados"; $fotoName = "portada"; $folder = "/hombres/sudadera/estampado"; ?>
+		<?php $baseName = "estampados"; $fotoName = "portada"; $folder = "/$sexo/$nombrePrenda/frente/estampado"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($baseName); ?>">
 			<div class="valHead">
 				<h5>Estampado <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"></span></h5>
@@ -167,7 +170,7 @@
 			</div>
 			
 			<?php
-				$valor = 'sudadera_estampado_name';
+				$valor = 'estampado_name';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -510,7 +513,7 @@
 		------------------------------------------------------------------------
 -->
 		
-		<?php $baseName = "sudadera_lateral_color"; $fotoName = "sombra_lateral"; ?>
+		<?php $baseName = "lateral_color"; $fotoName = "sombra_lateral"; ?>
 		<div data-cloneinfo="<?php echo($fotoName); ?>">
 		<?php
 			$data_input_hidden  =  array ( 
@@ -540,7 +543,7 @@
 
 
 		
-		<?php $baseName = "sudadera_lateral_color"; $fotoName = "prenda_lateral"; ?>
+		<?php $baseName = "lateral_color"; $fotoName = "prenda_lateral"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($fotoName); ?>">
 			<div class="valHead">
 				<h5>Color <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"></span></h5>
@@ -566,7 +569,7 @@
 			
 			<div class="box2col">
 			<?php
-				$valor = 'sudadera_lateral_color_name';
+				$valor = 'lateral_color_name';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -621,7 +624,7 @@
 		
 		
 		
-		<?php $baseName = "sudadera_lateral_estampados"; $fotoName = "model1p_lateral"; $folder = "/hombres/sudadera_lateral/estampado"; ?>
+		<?php $baseName = "lateral_estampados"; $fotoName = "model1p_lateral"; $folder = "/$sexo/$nombrePrenda/lateral/estampado"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($baseName); ?>">
 			<div class="valHead">
 				<h5>Estampado <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"></span></h5>
@@ -646,7 +649,7 @@
 			</div>
 			
 			<?php
-				$valor = 'sudadera_lateral_estampado_name';
+				$valor = 'lateral_estampado_name';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -827,7 +830,7 @@
 		------------------------------------------------------------------------
 -->
 		
-		<?php $baseName = "sudadera_espalda_color"; $fotoName = "sombra_espalda"; ?>
+		<?php $baseName = "espalda_color"; $fotoName = "sombra_espalda"; ?>
 		<div data-cloneinfo="<?php echo($fotoName); ?>">
 		<?php
 			$data_input_hidden  =  array ( 
@@ -857,7 +860,7 @@
 
 
 		
-		<?php $baseName = "sudadera_espalda_color"; $fotoName = "prenda_espalda"; ?>
+		<?php $baseName = "espalda_color"; $fotoName = "prenda_espalda"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($fotoName); ?>">
 			<div class="valHead">
 				<h5>Color <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"></span></h5>
@@ -883,7 +886,7 @@
 			
 			<div class="box2col">
 			<?php
-				$valor = 'sudadera_espalda_color_name';
+				$valor = 'espalda_color_name';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -939,7 +942,7 @@
 		
 		
 		
-		<?php $baseName = "sudadera_espalda_estampados"; $fotoName = "model1p_espalda"; $folder = "/hombres/sudadera_espalda/estampado"; ?>
+		<?php $baseName = "espalda_estampados"; $fotoName = "model1p_espalda"; $folder = "/$sexo/$nombrePrenda/espalda/estampado"; ?>
 		<div id="<?php echo($baseName); ?>_base" class="registro col3" data-cloneinfo="<?php echo($baseName); ?>">
 			<div class="valHead">
 				<h5>Estampado <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"></span></h5>
@@ -964,7 +967,7 @@
 			</div>
 			
 			<?php
-				$valor = 'sudadera_espalda_estampado_name';
+				$valor = 'espalda_estampado_name';
 				$data_input  =  array ( 
 					'name' => '',
 					'value' => '',
@@ -1135,7 +1138,7 @@
 	
 	
 	
-<!-- 	:::::  FIN.  cierrre del div box para todos los clones	:::: -->
+<!-- 	:::::  FIN.  cierre del div box para todos los clones	:::: -->
 	</div>
 
 	
@@ -1164,14 +1167,14 @@
 -->
 
 	
-	<!-- 	Seccion de generales -->
-	<?php $vDB = @$sudadera_generalDB; $baseName = "sudadera_general";?>
+	<!-- 	Seccion de basees -->
+	<?php $vDB = @$baseDB; $baseName = "base";?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	
 	<div id="<?php echo($baseName); ?>" class="row"><br/>
 		<div class="card stacked-form col-md-12">
 			<div class="card-header block">
-				<h5 class="tituloBlock">Sudadera Generales:</h5>
+				<h5 class="tituloBlock"><?php echo(idaConvertText('primera_mayuscula', $nombrePrenda)); ?> Generales:</h5>
 				<hr class="colorgraph">
 			</div>
 			
@@ -1187,7 +1190,7 @@
 							</div>
 							
 							<?php
-								$valor = 'sudadera_tipo_corte';
+								$valor = 'tipo_corte';
 								$data_input  =  array ( 
 									'name' => 'sectores['.$baseName.'][txts]['.$valor.']',
 									'value' => @$vDB->{$valor},
@@ -1205,7 +1208,7 @@
 								
 <!--
 							<?php
-								$valor = 'sudadera_tipo_mangas';
+								$valor = 'tipo_mangas';
 								$data_input  =  array ( 
 									'name' => 'sectores['.$baseName.'][txts]['.$valor.']',
 									'value' => @$vDB->{$valor},
@@ -1224,7 +1227,7 @@
 								
 								
 							<?php
-								$valor = 'sudadera_tipo_ubicacion';
+								$valor = 'tipo_ubicacion';
 								$data_input  =  array ( 
 									'name' => 'sectores['.$baseName.'][txts]['.$valor.']',
 									'value' => @$vDB->{$valor},
@@ -1260,15 +1263,15 @@
 	
 	
 	
-	<!-- 	Seccion de sudadera -->
-	<?php $vDB = @$sudadera_colorDB; $baseName = "sudadera_color"; $fotoName = "sombra"; $folder = "/hombres/sudadera/color"; ?>
+	<!-- 	Sección de prenda -->
+	<?php $vDB = @$colorDB; $baseName = "color"; $fotoName = "sombra"; $folder = "/$sexo/$nombrePrenda/frente/color"; ?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgIndex]" value="prenda,sombra"></input>
 	
 	<div id="<?php echo($baseName); ?>" class="row"><br/>
 		<div class="card stacked-form col-md-12">
 			<div class="card-header block">
-				<h5 class="tituloBlock">Frente Sudadera Color:</h5>
+				<h5 class="tituloBlock">Frente <?php echo(idaConvertText('primera_mayuscula', $nombrePrenda)); ?> Color:</h5>
 				<hr class="colorgraph">
 			</div>
 			
@@ -1377,7 +1380,7 @@
 									
 									<div class="box2col">
 									<?php
-										$valor = 'sudadera_color_name';
+										$valor = 'color_name';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},
@@ -1394,7 +1397,7 @@
 										<?php echo form_input( $data_input ); ?>
 										</div>
 									<?php
-										$valor = 'sudadera_color_valor';
+										$valor = 'color_valor';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},
@@ -1496,8 +1499,8 @@
 	
 	
 	
-	<!-- 	Seccion de estampdos -->
-	<?php $vDB = @$sudadera_estampadosDB; $baseName = "sudadera_estampados"; $fotoName = "portada"; $folder = "/hombres/sudadera/estampado"; ?>
+	<!-- 	Seccion de estampado -->
+	<?php $vDB = @$estampadosDB; $baseName = "estampados"; $fotoName = "portada"; $folder = "/$sexo/$nombrePrenda/frente/estampado"; ?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgIndex]" value="portada,model1,model2,model3,model4,model1p,model2p,model3p,model4p"></input>
 	
@@ -1547,7 +1550,7 @@
 									</div>
 									
 									<?php
-										$valor = 'sudadera_estampado_name';
+										$valor = 'estampado_name';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},
@@ -2187,15 +2190,15 @@
 	------------------------------------------------------------------------
 -->	
 	
-	<!-- 	Seccion de sudadera -->
-	<?php $vDB = @$sudadera_lateral_colorDB; $baseName = "sudadera_lateral_color"; $fotoName = "sombra_lateral"; $folder = "/hombres/sudadera_lateral/color"; ?>
+	<!-- 	Seccion de prenda -->
+	<?php $vDB = @$lateral_colorDB; $baseName = "lateral_color"; $fotoName = "sombra_lateral"; $folder = "/$sexo/$nombrePrenda/lateral/color"; ?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgIndex]" value="prenda_lateral,sombra_lateral"></input>
 	
 	<div id="<?php echo($baseName); ?>" class="row"><br/>
 		<div class="card stacked-form col-md-12">
 			<div class="card-header block">
-				<h5 class="tituloBlock">Lateral Sudadera Color:</h5>
+				<h5 class="tituloBlock">Lateral <?php echo(idaConvertText('primera_mayuscula', $nombrePrenda)); ?> Color:</h5>
 				<hr class="colorgraph">
 			</div>
 			
@@ -2304,7 +2307,7 @@
 									
 									<div class="box2col">
 									<?php
-										$valor = 'sudadera_lateral_color_name';
+										$valor = 'lateral_color_name';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},
@@ -2409,7 +2412,7 @@
 	
 	
 	<!-- 	Seccion de estampdos -->
-	<?php $vDB = @$sudadera_lateral_estampadosDB; $baseName = "sudadera_lateral_estampados"; $fotoName = "model1p_lateral"; $folder = "/hombres/sudadera_lateral/estampado"; ?>
+	<?php $vDB = @$lateral_estampadosDB; $baseName = "lateral_estampados"; $fotoName = "model1p_lateral"; $folder = "/$sexo/$nombrePrenda/lateral/estampado"; ?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgIndex]" value="model1p_lateral,model2p_lateral,model3p_lateral,model4p_lateral"></input>
 	
@@ -2459,7 +2462,7 @@
 									</div>
 									
 									<?php
-										$valor = 'sudadera_lateral_estampado_name';
+										$valor = 'lateral_estampado_name';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},
@@ -2772,15 +2775,15 @@
 	------------------------------------------------------------------------
 -->	
 	
-	<!-- 	Seccion de sudadera -->
-	<?php $vDB = @$sudadera_espalda_colorDB; $baseName = "sudadera_espalda_color"; $fotoName = "sombra_espalda"; $folder = "/hombres/sudadera_espalda/color"; ?>
+	<!-- 	Seccion de prenda -->
+	<?php $vDB = @$espalda_colorDB; $baseName = "espalda_color"; $fotoName = "sombra_espalda"; $folder = "/$sexo/$nombrePrenda/espalda/color"; ?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgIndex]" value="prenda_espalda,sombra_espalda"></input>
 	
 	<div id="<?php echo($baseName); ?>" class="row"><br/>
 		<div class="card stacked-form col-md-12">
 			<div class="card-header block">
-				<h5 class="tituloBlock">Espalda Sudadera Color:</h5>
+				<h5 class="tituloBlock">Espalda <?php echo(idaConvertText('primera_mayuscula', $nombrePrenda)); ?> Color:</h5>
 				<hr class="colorgraph">
 			</div>
 			
@@ -2889,7 +2892,7 @@
 									
 									<div class="box2col">
 									<?php
-										$valor = 'sudadera_espalda_color_name';
+										$valor = 'espalda_color_name';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},
@@ -2993,8 +2996,8 @@
 	
 	
 	
-	<!-- 	Seccion de estampdos -->
-	<?php $vDB = @$sudadera_espalda_estampadosDB; $baseName = "sudadera_espalda_estampados"; $fotoName = "model1p_espalda"; $folder = "/hombres/sudadera_espalda/estampado"; ?>
+	<!-- 	Seccion de estampados -->
+	<?php $vDB = @$espalda_estampadosDB; $baseName = "espalda_estampados"; $fotoName = "model1p_espalda"; $folder = "/$sexo/$nombrePrenda/espalda/estampado"; ?>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][baseName]" value="<?php echo($baseName); ?>"></input>
 	<input type="hidden" name="sectores[<?php echo($baseName); ?>][imgIndex]" value="model1p_espalda,model2p_espalda,model3p_espalda,model4p_espalda"></input>
 	
@@ -3044,7 +3047,7 @@
 									</div>
 									
 									<?php
-										$valor = 'sudadera_espalda_estampado_name';
+										$valor = 'espalda_estampado_name';
 										$data_input  =  array ( 
 											'name' => 'sectores['.$baseName.'][txts]['.$fotoName.'][clone]['.(int)$i.']['.$valor.']',
 											'value' => @$v->{$valor},

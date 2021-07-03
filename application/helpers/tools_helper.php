@@ -212,6 +212,28 @@ if ( ! function_exists('vcard'))
 
 
 
+if ( ! function_exists('idaConvertText'))
+{
+	/**
+	 * Strings
+	 *
+	 * Convierte caracteres en mayusculas, minusculas, tipo titulo, primrea letra a mayuscula y mas funciones para procesar un string
+	 *
+	 * @return	string
+	 */
+	function idaConvertText($modo, $text){
+		if($modo === 'primera_mayuscula'){
+			preg_match('/^\w{1}/', $text, $match);
+			return preg_replace('/^\w{1}/', mb_convert_case($match[0], MB_CASE_UPPER, "UTF-8"), $text);
+		}
+	}
+	
+}
+
+
+
+
+
 
 
 
